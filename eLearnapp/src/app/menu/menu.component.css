@@ -1,0 +1,13 @@
+﻿.mat-line {
+    color: black;
+}
+
+.mat-divider {
+    border-color: hotpink;
+}
+
+.add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

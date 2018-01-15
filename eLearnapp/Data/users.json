@@ -1,0 +1,63 @@
+﻿[{
+        "UserID": 1,
+        "Email": "user1@beispiel.com",
+        "Vorname": "Kakashi",
+        "Nachname": "Hatake"
+    },
+    {
+        "UserID": 2,
+        "Email": "user2@beispiel.com",
+        "Vorname": "Naruto",
+        "Nachname": "Uzomaki"
+    },
+
+    {
+        "UserID": 3,
+        "Email": "user3@beispiel.com",
+        "Vorname": "Biljana",
+        "Nachname": "Keranovic"
+    },
+    {
+        "UserID": 4,
+        "Email": "user4@beispiel.com",
+        "Vorname": "Ilija",
+        "Nachname": "alu Lazar"
+    },
+
+    {
+        "UserID": 5,
+        "Email": "user5@beispiel.com",
+        "Vorname": "Nikola",
+        "Nachname": "Adamovic"
+    },
+    {
+        "UserID": 6,
+        "Email": "user6@beispiel.com",
+        "Vorname": "Lazar",
+        "Nachname": "Adamovic"
+    },
+    {
+        "UserID": 7,
+        "Email": "user7@beispiel.com",
+        "Vorname": "Cosima",
+        "Nachname": "Baby"
+    },
+    {
+        "UserID": 8,
+        "Email": "user8@beispiel.com",
+        "Vorname": "Farida",
+        "Nachname": "Seiz"
+    },
+    {
+        "UserID": 9,
+        "Email": "user9@beispiel.com",
+        "Vorname": "Emanuel",
+        "Nachname": "Seiz"
+    },
+    {
+        "UserID": 10,
+        "Email": "user10@beispiel.com",
+        "Vorname": "Lili",
+        "Nachname": "Seiz"
+    }
+]

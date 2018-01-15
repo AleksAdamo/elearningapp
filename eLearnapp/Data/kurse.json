@@ -1,0 +1,31 @@
+[{
+        "KursID": 1,
+        "Name": "Objektorientiertes Programmieren",
+        "KategorieID": "1"
+    },
+    {
+        "KursID": 2,
+        "Name": "Buchhaltung",
+        "KategorieID": "2"
+    },
+    {
+        "KursID": 3,
+        "Name": "Informationswirtschaft",
+        "KategorieID": "3"
+    },
+    {
+        "KursID": 4,
+        "Name": "eBusiness",
+        "KategorieID": "3"
+    },
+    {
+        "KursID": 5,
+        "Name": "Produktion",
+        "KategorieID": "2"
+    },
+    {
+        "KursID": 6,
+        "Name": "Datenbanken",
+        "KategorieID": "1"
+    }
+]

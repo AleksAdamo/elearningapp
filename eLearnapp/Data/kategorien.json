@@ -1,0 +1,13 @@
+[{
+        "KategorieID": 1,
+        "Name": "Informatik"
+    },
+    {
+        "KategorieID": 2,
+        "Name": "Betriebswirtschaft"
+    },
+    {
+        "KategorieID": 3,
+        "Name": "Wirtschaftsinformatik"
+    }
+]

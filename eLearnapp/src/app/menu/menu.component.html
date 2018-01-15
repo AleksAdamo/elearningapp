@@ -1,0 +1,24 @@
+﻿<h2>Kursübersicht</h2>
+<mat-spinner *ngIf="!kategorien"></mat-spinner>
+<mat-list *ngIf="kategorien">
+    <ng-container *ngFor="let kategorie of kategorien"> <!--Ngcontainer = etwas wiederholen ohne äußeres element-->
+        <h3 my-subheader>
+            {{kategorie.name}}
+        </h3>
+        <mat-list-item *ngFor="let kurs of kategorie.kurse">
+            <h4 mat-line (click)="goToKurs(kurs)">{{kurs.kursID}} - {{kurs.name}}</h4>
+            <div mat-line>
+                <div fxLayout="row">
+                    <div fxFlex="80">{{kurs.beschreibung}}</div>
+                    <div fxFlex="20"><i class="material-icons">error</i></div>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </ng-container>
+</mat-list>
+<span class="add-button">
+    <button mat-fab (click)="addKurs()">
+        <mat-icon>add</mat-icon>
+    </button>
+</span>
