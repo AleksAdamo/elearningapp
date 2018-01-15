@@ -12536,7 +12536,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nwaleks\\.nuget\\packages\\": {},
+    "C:\\Users\\Jari\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
@@ -12546,18 +12546,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\nwaleks\\source\\repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
+      "projectUniqueName": "C:\\Users\\Jari\\Source\\Repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
       "projectName": "eLearnapp",
-      "projectPath": "C:\\Users\\nwaleks\\source\\repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
-      "packagesPath": "C:\\Users\\nwaleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nwaleks\\source\\repos\\09-eLearningApp\\eLearnapp\\obj\\",
+      "projectPath": "C:\\Users\\Jari\\Source\\Repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
+      "packagesPath": "C:\\Users\\Jari\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jari\\Source\\Repos\\09-eLearningApp\\eLearnapp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\nwaleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jari\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
