@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms'; //Um Einträge ändern zu können
 import { NgModule, Component } from '@angular/core';
 
-import { MatToolbarModule, MatListModule, MatInputModule, MatSelectModule, MatButtonModule, MatDialogModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatListModule, MatInputModule, MatSelectModule, MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule } from '@angular/material';
 
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -44,7 +44,8 @@ import { AddKursComponent } from './kurse/add-kurs/add-kurs.component';
       MatSelectModule,
       MatButtonModule,
       MatDialogModule,
-      MatIconModule
+      MatIconModule,
+      MatMenuModule
   ],
   exports: [],
   providers: [KurseService],

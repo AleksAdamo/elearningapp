@@ -72,7 +72,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".toolbar-box {\r\n    width: 100%;\r\n}", ""]);
+exports.push([module.i, "\r\n\r\n.toolbar-box {\r\n    color: black;\r\n    width: 100%;\r\n}", ""]);
 
 // exports
 
@@ -85,7 +85,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"toolbar-box\" color=\"primary\">{{title}}</mat-toolbar>\r\n<router-outlet></router-outlet>"
+module.exports = "\r\n\r\n<mat-toolbar class=\"toolbar-box\" color=\"primary\">\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n        <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n        <button mat-menu-item>\r\n            <mat-icon>assignment</mat-icon>\r\n            <span>Meine Kurse</span>\r\n        </button>\r\n        <button mat-menu-item>\r\n            <mat-icon>settings</mat-icon>\r\n            <span>Einstellungen</span>\r\n        </button>\r\n    </mat-menu>\r\n    {{title}}\r\n</mat-toolbar>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -181,17 +181,18 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatToolbarModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__["a" /* FlexLayoutModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatListModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material_progress_spinner__["a" /* MatProgressSpinnerModule */],
                 __WEBPACK_IMPORTED_MODULE_12__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatSelectModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["a" /* MatButtonModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatIconModule */]
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatMenuModule */]
             ],
             exports: [],
             providers: [__WEBPACK_IMPORTED_MODULE_13__kurse_service__["a" /* KurseService */]],
