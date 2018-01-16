@@ -1,8 +1,24 @@
-
-
 .toolbar-box {
     color: black;
     width: 100%;
+}
+.mat-toolbar.mat-primary {
+    background: #00a5ff;
+    color: rgba(255,255,255,.87);
+}
 
+body {
+    background-color: black;
+}
 
+.mat-typography h2 {
+    font: 500 32px/32px Roboto,"Helvetica Neue",sans-serif;
+    margin: 10px 0 16px;
+    color: white;
+}
+
+.mat-typography h3 {
+    font: 400 24px/28px Roboto,"Helvetica Neue",sans-serif;
+    margin: 10px 0px 30px;
+    color: white;
 }

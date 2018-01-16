@@ -1,5 +1,5 @@
 .kurs-form {
-    width: 500px;
+    width: 1000px;
 }
 
 .full-width {
@@ -8,5 +8,17 @@
 }
 
 .select-fix {
-    margin: 30px, 0px, 10px, 0px;
+    margin: 50px, 0px, 25px, 0px;
+}
+
+.mat-hint {
+    color: white;
+}
+
+.mat-input-element {
+    color: white;
+}
+
+.mat-form-field-infix {
+    width: 300px;
 }

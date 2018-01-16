@@ -72,7 +72,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\n\r\n.toolbar-box {\r\n    color: black;\r\n    width: 100%;\r\n}", ""]);
+exports.push([module.i, ".toolbar-box {\r\n    color: black;\r\n    width: 100%;\r\n}\r\n.mat-toolbar.mat-primary {\r\n    background: #00a5ff;\r\n    color: rgba(255,255,255,.87);\r\n}\r\n\r\nbody {\r\n    background-color: black;\r\n}\r\n\r\n.mat-typography h2 {\r\n    font: 500 32px/32px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0 16px;\r\n    color: white;\r\n}\r\n\r\n.mat-typography h3 {\r\n    font: 400 24px/28px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0px 30px;\r\n    color: white;\r\n}", ""]);
 
 // exports
 
@@ -85,7 +85,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<mat-toolbar class=\"toolbar-box\" color=\"primary\">\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n        <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n        <button mat-menu-item>\r\n            <mat-icon>assignment</mat-icon>\r\n            <span>Meine Kurse</span>\r\n        </button>\r\n        <button mat-menu-item>\r\n            <mat-icon>settings</mat-icon>\r\n            <span>Einstellungen</span>\r\n        </button>\r\n    </mat-menu>\r\n    {{title}}\r\n</mat-toolbar>\r\n<router-outlet></router-outlet>"
+module.exports = "<mat-toolbar class=\"toolbar-box\" color=\"primary\">\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n        <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n        <button mat-menu-item>\r\n            <mat-icon>assignment</mat-icon>\r\n            <span>Meine Kurse</span>\r\n        </button>\r\n        <button mat-menu-item>\r\n            <mat-icon>settings</mat-icon>\r\n            <span>Einstellungen</span>\r\n        </button>\r\n    </mat-menu>\r\n    {{title}}\r\n</mat-toolbar>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -324,7 +324,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    color: black;\r\n}\r\n\r\n.select-fix {\r\n    margin: 30px, 0px, 10px, 0px;\r\n}\r\n", ""]);
+exports.push([module.i, ".kurs-form {\r\n    width: 1000px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    color: black;\r\n}\r\n\r\n.select-fix {\r\n    margin: 50px, 0px, 25px, 0px;\r\n}\r\n\r\n.mat-hint {\r\n    color: white;\r\n}\r\n\r\n.mat-input-element {\r\n    color: white;\r\n}\r\n\r\n.mat-form-field-infix {\r\n    width: 300px;\r\n}", ""]);
 
 // exports
 
@@ -337,7 +337,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/add-kurs/add-kurs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<form *ngIf=\"kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"end\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.kategorieID}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-raised-button color=\"primary\" (click)=\"save()\">speichern</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<form *ngIf=\"kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"Name\" />\r\n        <mat-hint align=\"left\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"Kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.kategorieID}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-raised-button color=\"primary\" (click)=\"save()\">save</button>\r\n    </div>\r\n</form>"
 
 /***/ }),
 
@@ -403,7 +403,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    color: black;\r\n}\r\n\r\n.select-fix {\r\n    margin: 30px, 0px, 10px, 0px;\r\n}", ""]);
+exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    color: white;\r\n}\r\n\r\n.select-fix {\r\n    margin: 30px, 0px, 10px, 0px;\r\n}\r\n\r\n.mat-hint {\r\n    color: white;\r\n}\r\n\r\n.mat-input-element {\r\n    color: white;\r\n}\r\n\r\n.mat-form-field-infix {\r\n    width: 300px;\r\n}", ""]);
 
 // exports
 
@@ -416,7 +416,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/kurs-detail/kurs-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.kategorieID}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-raised-button color=\"primary\" (click)=\"save()\">speichern</button>\r\n        <button mat-raised-button color=\"warn\" (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"Name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.kategorieID}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-raised-button color=\"primary\" (click)=\"save()\">save</button>\r\n        <button mat-raised-button color=\"warn\" (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
 
 /***/ }),
 
@@ -515,7 +515,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n", ""]);
+exports.push([module.i, ".mat-line {\r\n    color: white;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: white;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n\r\n.mat-typography h2 {\r\n    font: 500 32px/32px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0 16px;\r\n    color: white;\r\n}\r\n\r\n.mat-typography h3 {\r\n    font: 400 24px/28px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0px 30px;\r\n    color: white;\r\n}", ""]);
 
 // exports
 
@@ -528,7 +528,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Kursübersicht</h2>\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\"> <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">error</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
+module.exports = "<font color=\"white\">\r\n    <h2>Kursübersicht</h2>\r\n</font>\r\n    <mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n    <mat-list *ngIf=\"kategorien\">\r\n        <ng-container *ngFor=\"let kategorie of kategorien\">\r\n            <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n            <h3 my-subheader>\r\n                <font color=\"white\">\r\n                    {{kategorie.name}}\r\n                </font>\r\n            </h3>\r\n            <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n                <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n                <div mat-line>\r\n                    <div fxLayout=\"row\">\r\n                        <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                        <div fxFlex=\"20\"><i class=\"material-icons\">error</i></div>\r\n                    </div>\r\n                </div>\r\n            </mat-list-item>\r\n            <mat-divider></mat-divider>\r\n        </ng-container>\r\n    </mat-list>\r\n    <span class=\"add-button\">\r\n        <button mat-fab (click)=\"addKurs()\">\r\n            <mat-icon>add</mat-icon>\r\n        </button>\r\n    </span>\r\n"
 
 /***/ }),
 

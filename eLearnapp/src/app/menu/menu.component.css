@@ -1,13 +1,25 @@
 ﻿.mat-line {
-    color: black;
+    color: white;
 }
 
 .mat-divider {
-    border-color: hotpink;
+    border-color: white;
 }
 
 .add-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+.mat-typography h2 {
+    font: 500 32px/32px Roboto,"Helvetica Neue",sans-serif;
+    margin: 10px 0 16px;
+    color: white;
+}
+
+.mat-typography h3 {
+    font: 400 24px/28px Roboto,"Helvetica Neue",sans-serif;
+    margin: 10px 0px 30px;
+    color: white;
 }

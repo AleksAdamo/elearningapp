@@ -1,19 +1,19 @@
 <mat-spinner *ngIf="!kategorien"></mat-spinner>
 <form *ngIf="kategorien" class="kurs-form">
     <mat-form-field class="full-widht">
-        <input matInput placeholder="name" [(ngModel)]="kurs.name" maxlength="100" name="name" />
-        <mat-hint align="end">{{kurs.name.length}} / 100</mat-hint>
+        <input matInput placeholder="Name" [(ngModel)]="kurs.name" maxlength="100" name="Name" />
+        <mat-hint align="left">{{kurs.name.length}} / 100</mat-hint>
     </mat-form-field>
     <!--<mat-form-field class="full-widht">
         <textarea matInput placeholder="Beschreibung" [(ngModel)]="kurs.beschreibung" maxlength="250" name="beschreibung"></textarea>
         <mat-hint align="end">/ 250</mat-hint>
     </mat-form-field> -->
     <mat-form-field>
-        <mat-select class="full-widht select-fix" placeholder="Kategorie" [(ngModel)]="kurs.kategorieID" name="kategorie">
+        <mat-select class="full-widht select-fix" placeholder="Kategorie" [(ngModel)]="kurs.kategorieID" name="Kategorie">
             <mat-option *ngFor="let kategorie of kategorien" [value]="kategorie.kategorieID">{{kategorie.kategorieID}}</mat-option>
         </mat-select>
     </mat-form-field>
     <div>
-        <button mat-raised-button color="primary" (click)="save()">speichern</button>
+        <button mat-raised-button color="primary" (click)="save()">save</button>
     </div>
 </form>

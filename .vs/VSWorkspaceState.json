@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\eLearnapp"
+    "\\eLearnapp",
+    "\\eLearnapp\\src\\app"
   ],
+  "SelectedNode": "\\eLearnapp\\eLearnapp.sln",
   "PreviewInSolutionExplorer": false
 }
