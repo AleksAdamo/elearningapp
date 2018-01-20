@@ -26,5 +26,8 @@ namespace eLearnapp.Models
 
         public virtual ICollection<KursTeilnahme> Kursteilnahmen { get; set; }
 
+        public virtual ICollection<Abfrage> Abfragen { get; set; }
+
+
     }
 }
