@@ -18,7 +18,7 @@ namespace eLearnapp.Models
         public int KategorieID { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(50)]
         public string Name { get; set; }
 
         //Klasse muss seine FKs kennen

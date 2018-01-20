@@ -31,6 +31,8 @@ namespace eLearnapp
             services.AddScoped<IUserRepository, EfUserRepository>();
             services.AddScoped<IKursRepository, EfKursRepository>();
             services.AddScoped<IKategorieRepository, EfKategorieRepository>();
+            services.AddScoped<IAbfrageRepository, EfAbfrageRepository>();
+            services.AddScoped<ITeilnahmeRepository, EfTeilnahmeRepository>();
             services.AddMvc()
                 .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             //DbContect registrieren

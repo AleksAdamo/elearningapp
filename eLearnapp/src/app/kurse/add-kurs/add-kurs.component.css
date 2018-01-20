@@ -1,24 +1,11 @@
 .kurs-form {
-    width: 1000px;
+    width: 500px;
 }
 
 .full-width {
     width: 100%;
-    color: black;
 }
 
-.select-fix {
-    margin: 50px, 0px, 25px, 0px;
-}
-
-.mat-hint {
-    color: white;
-}
-
-.mat-input-element {
-    color: white;
-}
-
-.mat-form-field-infix {
-    width: 300px;
-}
+/*.select-fix {
+    margin: 30px 0px 10px 0px;
+}*/

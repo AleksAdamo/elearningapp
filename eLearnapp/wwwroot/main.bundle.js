@@ -17,6 +17,166 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 
 /***/ }),
 
+/***/ "../../../../../src/app/admin/kursmenu/kursmenu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/kursmenu/kursmenu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2>Kursübersicht</h2>\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\">\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">assignment_turned_in</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/kursmenu/kursmenu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KursmenuComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+ //OnInit = Lebenszyklus event
+
+
+var KursmenuComponent = (function () {
+    //KurseService injizieren
+    function KursmenuComponent(kurseService, router) {
+        this.kurseService = kurseService;
+        this.router = router;
+    }
+    KursmenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.kurseService.getKategorien().then(function (kategorien) { return _this.kategorien = kategorien; });
+    };
+    KursmenuComponent.prototype.goToKurs = function (kurs) {
+        this.router.navigate(['/kurs', kurs.kursID]);
+    };
+    KursmenuComponent.prototype.addKurs = function () {
+        this.router.navigate(['/kurs/add']);
+    };
+    KursmenuComponent.prototype.goToUser = function (user) {
+        this.router.navigate(['/user', user.userID]);
+    };
+    KursmenuComponent.prototype.addUser = function () {
+        this.router.navigate(['/user/add']);
+    };
+    KursmenuComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'kurs-menu',
+            template: __webpack_require__("../../../../../src/app/admin/kursmenu/kursmenu.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/admin/kursmenu/kursmenu.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], KursmenuComponent);
+    return KursmenuComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/usermenu/usermenu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.userlist {\r\n    margin-right: 150px;\r\n    margin-bottom: 30px;\r\n    border-bottom: 2px solid hotpink;\r\n}\r\n\r\n.mat-grid-tile {\r\n    text-align: left;\r\n    -webkit-box-pack: start !important;\r\n        -ms-flex-pack: start !important;\r\n            justify-content: flex-start !important;\r\n    border: 1px solid black;\r\n}\r\n\r\nimg {\r\n    border: 2px solid black !important;\r\n}\r\n\r\n.headContent {\r\n    margin-right: 150px;\r\n    margin-bottom: 10px;\r\n    margin-top: 10px;\r\n    border-left: 2px solid hotpink;\r\n    border-right: 2px solid hotpink;\r\n}\r\n\r\nh2 {\r\n    text-align: left;\r\n    font-size: x-large;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/usermenu/usermenu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"headContent\">\r\n    <h2>User übersicht</h2>\r\n</div>\r\n<br />\r\n<mat-grid-list cols=\"6\" rowHeight=\"50px\" gutterSize=\"1px\" class=\"userlist\" *ngFor=\"let user of users\">\r\n    <mat-grid-tile colspan=\"2\" rowspan=\"4\" class=\"userProfile\">\r\n        <span>\r\n            <img src=\"../../../assets/img/default-user-image.png\" />\r\n        </span>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userId\">\r\n        UserID:\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userId\">\r\n        {{user.userID}}\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"emptyArea\">\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"viewKurse\">\r\n        <mat-icon>assignment</mat-icon>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userForname\">\r\n        Vorname:\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userForname\">\r\n        {{user.vorname}}\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"emptyArea\">\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"saveUser\">\r\n        <mat-icon>done</mat-icon>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userName\">\r\n        Nachname:\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userName\">\r\n        {{user.nachname}}\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"emptyArea\">\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"deleteUser\">\r\n        <mat-icon>delete</mat-icon>\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userEmail\">\r\n        Email:\r\n    </mat-grid-tile>\r\n    <mat-grid-tile colspan=\"1\" rowspan=\"1\" class=\"userEmail\">\r\n        {{user.email}}\r\n    </mat-grid-tile>\r\n</mat-grid-list>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/usermenu/usermenu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsermenuComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+ //OnInit = Lebenszyklus event
+
+
+var UsermenuComponent = (function () {
+    //KurseService injizieren
+    function UsermenuComponent(kurseService, router) {
+        this.kurseService = kurseService;
+        this.router = router;
+    }
+    UsermenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.kurseService.getUsers().then(function (users) { return _this.users = users; });
+    };
+    UsermenuComponent.prototype.goToUser = function (user) {
+        this.router.navigate(['/user', user.userID]);
+    };
+    UsermenuComponent.prototype.addUser = function () {
+        this.router.navigate(['/user/add']);
+    };
+    UsermenuComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'user-menu',
+            template: __webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], UsermenuComponent);
+    return UsermenuComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/app-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27,6 +187,9 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu_menu_component__ = __webpack_require__("../../../../../src/app/menu/menu.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kurse_kurs_detail_kurs_detail_component__ = __webpack_require__("../../../../../src/app/kurse/kurs-detail/kurs-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__kurse_add_kurs_add_kurs_component__ = __webpack_require__("../../../../../src/app/kurse/add-kurs/add-kurs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__users_user_detail_user_detail_component__ = __webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_usermenu_usermenu_component__ = __webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -39,13 +202,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
 //routen definieren
 var routes = [
     //Zu jeder Route die ich routen möchte vergebe ich einen Pfad und eine Komponente
-    { path: '', redirectTo: '/menu', pathMatch: 'full' },
-    { path: 'menu', component: __WEBPACK_IMPORTED_MODULE_2__menu_menu_component__["a" /* MenuComponent */] },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */] },
+    { path: 'admin/kursmenu', component: __WEBPACK_IMPORTED_MODULE_2__menu_menu_component__["a" /* MenuComponent */] },
     { path: 'kurs/add', component: __WEBPACK_IMPORTED_MODULE_4__kurse_add_kurs_add_kurs_component__["a" /* AddKursComponent */] },
-    { path: 'kurs/:kursID', component: __WEBPACK_IMPORTED_MODULE_3__kurse_kurs_detail_kurs_detail_component__["a" /* KursDetailComponent */] }
+    { path: 'kurs/:kursID', component: __WEBPACK_IMPORTED_MODULE_3__kurse_kurs_detail_kurs_detail_component__["a" /* KursDetailComponent */] },
+    { path: 'user/userID', component: __WEBPACK_IMPORTED_MODULE_5__users_user_detail_user_detail_component__["a" /* UserDetailComponent */] },
+    { path: 'admin/usermenu', component: __WEBPACK_IMPORTED_MODULE_6__admin_usermenu_usermenu_component__["a" /* UsermenuComponent */] }
 ];
 //Modul konfigurieren
 var AppRoutingModule = (function () {
@@ -72,7 +241,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".toolbar-box {\r\n    color: black;\r\n    width: 100%;\r\n}\r\n.mat-toolbar.mat-primary {\r\n    background: #00a5ff;\r\n    color: rgba(255,255,255,.87);\r\n}\r\n\r\nbody {\r\n    background-color: black;\r\n}\r\n\r\n.mat-typography h2 {\r\n    font: 500 32px/32px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0 16px;\r\n    color: white;\r\n}\r\n\r\n.mat-typography h3 {\r\n    font: 400 24px/28px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0px 30px;\r\n    color: white;\r\n}", ""]);
+exports.push([module.i, ".toolbar-box {\r\n    width: 100%;\r\n}", ""]);
 
 // exports
 
@@ -85,7 +254,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"toolbar-box\" color=\"primary\">\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\">\r\n        <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n        <button mat-menu-item>\r\n            <mat-icon>assignment</mat-icon>\r\n            <span>Meine Kurse</span>\r\n        </button>\r\n        <button mat-menu-item>\r\n            <mat-icon>settings</mat-icon>\r\n            <span>Einstellungen</span>\r\n        </button>\r\n    </mat-menu>\r\n    {{title}}\r\n</mat-toolbar>\r\n<router-outlet></router-outlet>"
+module.exports = "<div>\r\n    <mat-toolbar class=\"toolbar-box\" color=\"black\">\r\n    <button mat-button class=\"menuTrigger\" [matMenuTriggerFor]=\"menu\">\r\n        <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n        <button mat-menu-item routerLink=\"admin/kursmenu\" routerLinkActive=\"mat-button-active\">\r\n            <mat-icon>assignment_ind</mat-icon>\r\n            <span>Kurs-Liste</span>\r\n        </button>\r\n        <button mat-menu-item routerLink=\"admin/usermenu\" routerLinkActive=\"mat-button-active\">\r\n            <mat-icon>account_box</mat-icon>\r\n            <span>User-Liste</span>\r\n        </button>\r\n        <button mat-menu-item disabled>\r\n            <mat-icon>settings</mat-icon>\r\n            <span>Einstellungen</span>\r\n        </button>\r\n        <button mat-menu-item disabled>\r\n            <mat-icon>power_settings_new</mat-icon>\r\n            <span>Abmelden</span>\r\n        </button>\r\n    </mat-menu>\r\n        {{title}}\r\n    </mat-toolbar>\r\n</div>\r\n\r\n<router-outlet></router-outlet> <!-- Platzhalter f�r entsprechende Inhalte -->\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -142,6 +311,10 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__delete_dialog_component__ = __webpack_require__("../../../../../src/app/delete-dialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__kurse_add_kurs_add_kurs_component__ = __webpack_require__("../../../../../src/app/kurse/add-kurs/add-kurs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__users_user_detail_user_detail_component__ = __webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__admin_usermenu_usermenu_component__ = __webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__admin_kursmenu_kursmenu_component__ = __webpack_require__("../../../../../src/app/admin/kursmenu/kursmenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -164,6 +337,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -174,25 +351,30 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_10__menu_menu_component__["a" /* MenuComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__kurse_kurs_detail_kurs_detail_component__["a" /* KursDetailComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__delete_dialog_component__["a" /* DeleteDialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__kurse_add_kurs_add_kurs_component__["a" /* AddKursComponent */]
+                __WEBPACK_IMPORTED_MODULE_15__kurse_add_kurs_add_kurs_component__["a" /* AddKursComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__users_user_detail_user_detail_component__["a" /* UserDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__admin_usermenu_usermenu_component__["a" /* UsermenuComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__admin_kursmenu_kursmenu_component__["a" /* KursmenuComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__login_login_component__["a" /* LoginComponent */]
             ],
             entryComponents: [__WEBPACK_IMPORTED_MODULE_14__delete_dialog_component__["a" /* DeleteDialogComponent */]],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["k" /* MatToolbarModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__["a" /* FlexLayoutModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatListModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material_progress_spinner__["a" /* MatProgressSpinnerModule */],
                 __WEBPACK_IMPORTED_MODULE_12__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatSelectModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["a" /* MatButtonModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatMenuModule */]
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatMenuModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatGridListModule */]
             ],
             exports: [],
             providers: [__WEBPACK_IMPORTED_MODULE_13__kurse_service__["a" /* KurseService */]],
@@ -304,6 +486,28 @@ var KurseService = (function () {
             .toPromise()
             .then(function () { return null; });
     };
+    KurseService.prototype.getUsers = function () {
+        return this.http.get('api/users')
+            .toPromise() //
+            .then(function (r) { return r.json(); });
+    };
+    KurseService.prototype.getUserById = function (UserID) {
+        return this.http.get("api/users/" + UserID)
+            .toPromise()
+            .then(function (r) { return r.json(); });
+    };
+    KurseService.prototype.saveUser = function (user) {
+        if (user.userID) {
+            return this.http.put("api/users/" + user.userID, user)
+                .toPromise()
+                .then(function (r) { return r.json(); });
+        }
+        else {
+            return this.http.post('api/users', user)
+                .toPromise()
+                .then(function (r) { return r.json(); });
+        }
+    };
     KurseService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])() //damit wir die klasse injizieren können
         ,
@@ -324,7 +528,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".kurs-form {\r\n    width: 1000px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    color: black;\r\n}\r\n\r\n.select-fix {\r\n    margin: 50px, 0px, 25px, 0px;\r\n}\r\n\r\n.mat-hint {\r\n    color: white;\r\n}\r\n\r\n.mat-input-element {\r\n    color: white;\r\n}\r\n\r\n.mat-form-field-infix {\r\n    width: 300px;\r\n}", ""]);
+exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n}\r\n\r\n/*.select-fix {\r\n    margin: 30px 0px 10px 0px;\r\n}*/\r\n", ""]);
 
 // exports
 
@@ -337,7 +541,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/add-kurs/add-kurs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<form *ngIf=\"kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"Name\" />\r\n        <mat-hint align=\"left\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"Kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.kategorieID}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-raised-button color=\"primary\" (click)=\"save()\">save</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<form *ngIf=\"kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"end\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorieID\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n    </div>\r\n</form>"
 
 /***/ }),
 
@@ -403,7 +607,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    color: white;\r\n}\r\n\r\n.select-fix {\r\n    margin: 30px, 0px, 10px, 0px;\r\n}\r\n\r\n.mat-hint {\r\n    color: white;\r\n}\r\n\r\n.mat-input-element {\r\n    color: white;\r\n}\r\n\r\n.mat-form-field-infix {\r\n    width: 300px;\r\n}", ""]);
+exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n}\r\n\r\n/*.select-fix {\r\n    margin: 30px 0px 10px 0px;\r\n}*/\r\n", ""]);
 
 // exports
 
@@ -416,7 +620,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/kurs-detail/kurs-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"Name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.kategorieID}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-raised-button color=\"primary\" (click)=\"save()\">save</button>\r\n        <button mat-raised-button color=\"warn\" (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n        <button mat-button (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
 
 /***/ }),
 
@@ -507,6 +711,79 @@ var Kurs = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".login {\r\n    margin-bottom: 500px;\r\n    margin-top: 100px;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"login\">\r\n    <h2>Login</h2>\r\n    <div>\r\n        <label for=\"vorname\">Vorname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"login-form\" ng-model=\"user.vorname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Nachname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"login-form\" ng-model=\"user.nachname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Email: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"login-form\" ng-model=\"user.email\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Passwort: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"login-form\" ng-model=\"user.passwort\" />\r\n    </div>\r\n    <div class=\"login-actions\">\r\n        <button (click)=\"goOn()\">Login</button>\r\n        <a href=\"#!/register\">Register</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--\r\n    <div>\r\n    <h2>Login</h2>\r\n    <form name=\"form\" ng-submit=\"vm.login()\" role=\"form\">\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.username.$dirty && form.username.$error.required }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" name=\"username\" id=\"username\" class=\"form-control\" ng-model=\"vm.username\" required />\r\n            <span ng-show=\"form.username.$dirty && form.username.$error.required\" class=\"help-block\">Username is required</span>\r\n        </div>\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" ng-model=\"vm.password\" required />\r\n            <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"help-block\">Password is required</span>\r\n        </div>\r\n        <div class=\"form-actions\">\r\n            <button type=\"submit\" ng-disabled=\"form.$invalid || vm.dataLoading\" class=\"btn btn-primary\">Login</button>\r\n            <img ng-if=\"vm.dataLoading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a href=\"#!/register\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n    </form>\r\n</div>\r\n-->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+ //OnInit = Lebenszyklus event
+
+
+var LoginComponent = (function () {
+    function LoginComponent(kurseService, router) {
+        this.kurseService = kurseService;
+        this.router = router;
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.kurseService.getUsers().then(function (users) { return _this.users = users; });
+    };
+    LoginComponent.prototype.goOn = function () {
+        this.router.navigate(['/admin/kursmenu']);
+    };
+    LoginComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'login',
+            template: __webpack_require__("../../../../../src/app/login/login.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/login/login.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/menu/menu.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -515,7 +792,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-line {\r\n    color: white;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: white;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n\r\n.mat-typography h2 {\r\n    font: 500 32px/32px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0 16px;\r\n    color: white;\r\n}\r\n\r\n.mat-typography h3 {\r\n    font: 400 24px/28px Roboto,\"Helvetica Neue\",sans-serif;\r\n    margin: 10px 0px 30px;\r\n    color: white;\r\n}", ""]);
+exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -528,7 +805,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<font color=\"white\">\r\n    <h2>Kursübersicht</h2>\r\n</font>\r\n    <mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n    <mat-list *ngIf=\"kategorien\">\r\n        <ng-container *ngFor=\"let kategorie of kategorien\">\r\n            <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n            <h3 my-subheader>\r\n                <font color=\"white\">\r\n                    {{kategorie.name}}\r\n                </font>\r\n            </h3>\r\n            <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n                <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n                <div mat-line>\r\n                    <div fxLayout=\"row\">\r\n                        <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                        <div fxFlex=\"20\"><i class=\"material-icons\">error</i></div>\r\n                    </div>\r\n                </div>\r\n            </mat-list-item>\r\n            <mat-divider></mat-divider>\r\n        </ng-container>\r\n    </mat-list>\r\n    <span class=\"add-button\">\r\n        <button mat-fab (click)=\"addKurs()\">\r\n            <mat-icon>add</mat-icon>\r\n        </button>\r\n    </span>\r\n"
+module.exports = "<h2>Kursübersicht</h2>\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\"> <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">assignment_turned_in</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
 
 /***/ }),
 
@@ -568,6 +845,12 @@ var MenuComponent = (function () {
     MenuComponent.prototype.addKurs = function () {
         this.router.navigate(['/kurs/add']);
     };
+    MenuComponent.prototype.goToUser = function (user) {
+        this.router.navigate(['/user', user.userID]);
+    };
+    MenuComponent.prototype.addUser = function () {
+        this.router.navigate(['/user/add']);
+    };
     MenuComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'kurs-menu',
@@ -578,6 +861,87 @@ var MenuComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], MenuComponent);
     return MenuComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/user-detail/user-detail.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".user-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/user-detail/user-detail.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-spinner *ngIf=\"!user\"></mat-spinner>\r\n<form *ngIf=\"user\" class=\"user-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"vorname\" [(ngModel)]=\"user.vorname\" maxlength=\"30\" name=\"vorname\" />\r\n        <mat-hint align=\"right\">{{user.vorname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"nachname\" [(ngModel)]=\"user.nachname\" maxlength=\"30\" name=\"nachname\" />\r\n        <mat-hint align=\"right\">{{user.nachname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"user.email\" maxlength=\"50\" name=\"email\" />\r\n        <mat-hint align=\"right\">{{user.email.length}} / 50</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"user.passwort\" maxlength=\"20\" name=\"passwort\" />\r\n        <mat-hint align=\"right\">{{user.passwort.length}} / 20</mat-hint>\r\n    </mat-form-field>\r\n\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n        <button mat-button (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/user-detail/user-detail.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDetailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var UserDetailComponent = (function () {
+    //private kursteilnahmen: KursTeilnahme[];
+    function UserDetailComponent(route, kurseService, router) {
+        this.route = route;
+        this.kurseService = kurseService;
+        this.router = router;
+    }
+    UserDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //this.kurseService.getKursTeilnahmen().then(kursTeilnahmen => this.kursTeilnahmen = kursTeilnahmen);
+        this.route.paramMap
+            .switchMap(function (params) { return _this.kurseService.getUserById(+params.get('userID')); })
+            .subscribe(function (user) { return _this.user = user; });
+    };
+    UserDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.kurseService.saveUser(this.user).then(function () { return _this.router.navigate(['/']); });
+    };
+    UserDetailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-user-detail',
+            template: __webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__kurse_service__["a" /* KurseService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_3__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], UserDetailComponent);
+    return UserDetailComponent;
 }());
 
 

@@ -1,63 +1,90 @@
-﻿[{
-        "UserID": 1,
-        "Email": "user1@beispiel.com",
-        "Vorname": "Kakashi",
-        "Nachname": "Hatake"
-    },
-    {
-        "UserID": 2,
-        "Email": "user2@beispiel.com",
-        "Vorname": "Naruto",
-        "Nachname": "Uzomaki"
-    },
+﻿[
+  {
+    "UserID": 1,
+    "Email": "user1@beispiel.com",
+    "Vorname": "Kakashi",
+    "Nachname": "Hatake",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 2,
+    "Email": "user2@beispiel.com",
+    "Vorname": "Naruto",
+    "Nachname": "Uzomaki",
+    "Passwort": "123456"
+  },
 
-    {
-        "UserID": 3,
-        "Email": "user3@beispiel.com",
-        "Vorname": "Biljana",
-        "Nachname": "Keranovic"
-    },
-    {
-        "UserID": 4,
-        "Email": "user4@beispiel.com",
-        "Vorname": "Ilija",
-        "Nachname": "alu Lazar"
-    },
+  {
+    "UserID": 3,
+    "Email": "user3@beispiel.com",
+    "Vorname": "Biljana",
+    "Nachname": "Keranovic",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 4,
+    "Email": "user4@beispiel.com",
+    "Vorname": "Ilija",
+    "Nachname": "alu Lazar",
+    "Passwort": "123456"
+  },
 
-    {
-        "UserID": 5,
-        "Email": "user5@beispiel.com",
-        "Vorname": "Nikola",
-        "Nachname": "Adamovic"
-    },
-    {
-        "UserID": 6,
-        "Email": "user6@beispiel.com",
-        "Vorname": "Lazar",
-        "Nachname": "Adamovic"
-    },
-    {
-        "UserID": 7,
-        "Email": "user7@beispiel.com",
-        "Vorname": "Cosima",
-        "Nachname": "Baby"
-    },
-    {
-        "UserID": 8,
-        "Email": "user8@beispiel.com",
-        "Vorname": "Farida",
-        "Nachname": "Seiz"
-    },
-    {
-        "UserID": 9,
-        "Email": "user9@beispiel.com",
-        "Vorname": "Emanuel",
-        "Nachname": "Seiz"
-    },
-    {
-        "UserID": 10,
-        "Email": "user10@beispiel.com",
-        "Vorname": "Lili",
-        "Nachname": "Seiz"
-    }
+  {
+    "UserID": 5,
+    "Email": "user5@beispiel.com",
+    "Vorname": "Nikola",
+    "Nachname": "Adamovic",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 6,
+    "Email": "user6@beispiel.com",
+    "Vorname": "Lazar",
+    "Nachname": "Adamovic",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 7,
+    "Email": "user7@beispiel.com",
+    "Vorname": "Cosima",
+    "Nachname": "Baby",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 8,
+    "Email": "user8@beispiel.com",
+    "Vorname": "Farida",
+    "Nachname": "Seiz",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 9,
+    "Email": "user9@beispiel.com",
+    "Vorname": "Emanuel",
+    "Nachname": "Seiz",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 10,
+    "Email": "user10@beispiel.com",
+    "Vorname": "Lili",
+    "Nachname": "Seiz",
+    "Passwort": "123456",
+    "Usertyp": 1
+  },
+  {
+    "UserID": 100,
+    "Email": "admin@boss.com",
+    "Vorname": "Goku",
+    "Nachname": "Sayajin",
+    "Passwort": "admin",
+    "Usertyp": 1
+  }
 ]

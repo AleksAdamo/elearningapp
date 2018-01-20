@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { KurseService } from '../kurse.service';
 import { Kategorie } from '../Kategorien/kategorie';
 import { Kurs } from '../kurse/kurs';
+import { User } from '../users/user';
 
 @Component({
     selector: 'kurs-menu', //was ist das HTML Element was ich nutzen will um etwas darzustellen
@@ -29,5 +30,13 @@ export class MenuComponent implements OnInit {
 
     addKurs(): void {
         this.router.navigate(['/kurs/add'])
+    }
+
+    goToUser(user: User): void {
+        this.router.navigate(['/user', user.userID]);
+    }
+
+    addUser(): void {
+        this.router.navigate(['/user/add'])
     }
 }

@@ -1,0 +1,24 @@
+<mat-spinner *ngIf="!user"></mat-spinner>
+<form *ngIf="user" class="user-form">
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="vorname" [(ngModel)]="user.vorname" maxlength="30" name="vorname" />
+        <mat-hint align="right">{{user.vorname.length}} / 30</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="nachname" [(ngModel)]="user.nachname" maxlength="30" name="nachname" />
+        <mat-hint align="right">{{user.nachname.length}} / 30</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="name" [(ngModel)]="user.email" maxlength="50" name="email" />
+        <mat-hint align="right">{{user.email.length}} / 50</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="name" [(ngModel)]="user.passwort" maxlength="20" name="passwort" />
+        <mat-hint align="right">{{user.passwort.length}} / 20</mat-hint>
+    </mat-form-field>
+
+    <div>
+        <button mat-button (click)="save()">speichern</button>
+        <button mat-button (click)="delete()">delete</button>
+    </div>
+</form>

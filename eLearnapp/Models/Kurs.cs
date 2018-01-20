@@ -12,11 +12,12 @@ namespace eLearnapp.Models
         public Kurs()
         {
             Kursteilnahmen = new HashSet<KursTeilnahme>();
+            Abfrage = new HashSet<Abfrage>();
         }
 
         public int KursID { get; set; }
         [Required]
-        [MaxLength(100)]
+        [MaxLength(60)]
         public string Name { get; set; }
 
         //Fremdschlüssel
@@ -25,9 +26,7 @@ namespace eLearnapp.Models
         public Kategorie Kategorie { get; set; }
 
         public virtual ICollection<KursTeilnahme> Kursteilnahmen { get; set; }
-
-        public virtual ICollection<Abfrage> Abfragen { get; set; }
-
+        public virtual ICollection<Abfrage> Abfrage { get; set; }
 
     }
 }

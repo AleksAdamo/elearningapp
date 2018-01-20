@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eLearnapp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eLearnapp.Repositories
 {
@@ -40,7 +41,7 @@ namespace eLearnapp.Repositories
 
         public IEnumerable<Kurs> GetKurse()
         {
-            return _db.Kurse;
+            return _db.Kurse.Include(x => x.Abfrage);
         }
 
         public Kurs UpdateKurs(Kurs kurs)

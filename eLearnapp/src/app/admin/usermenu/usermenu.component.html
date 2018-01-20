@@ -1,0 +1,50 @@
+﻿<div class="headContent">
+    <h2>User übersicht</h2>
+</div>
+<br />
+<mat-grid-list cols="6" rowHeight="50px" gutterSize="1px" class="userlist" *ngFor="let user of users">
+    <mat-grid-tile colspan="2" rowspan="4" class="userProfile">
+        <span>
+            <img src="../../../assets/img/default-user-image.png" />
+        </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userId">
+        UserID:
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userId">
+        {{user.userID}}
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="emptyArea">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="viewKurse">
+        <mat-icon>assignment</mat-icon>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userForname">
+        Vorname:
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userForname">
+        {{user.vorname}}
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="emptyArea">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="saveUser">
+        <mat-icon>done</mat-icon>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userName">
+        Nachname:
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userName">
+        {{user.nachname}}
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="emptyArea">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="deleteUser">
+        <mat-icon>delete</mat-icon>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userEmail">
+        Email:
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="userEmail">
+        {{user.email}}
+    </mat-grid-tile> 
+</mat-grid-list>

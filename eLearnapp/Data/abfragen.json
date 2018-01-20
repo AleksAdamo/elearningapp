@@ -1,0 +1,33 @@
+﻿[
+  {
+    "Id": 1,
+    "Frage": "Wie heißt die Hauptstadt von Deutschland?",
+    "Antwort": "Berlin",
+    "KursID": "1"
+  },
+  {
+    "Id": 2,
+    "Frage": "Wo liegt Paris?",
+    "Antwort": "in Frankreich",
+    "KursID": "2"
+  },
+  {
+    "Id": 3,
+    "Frage": "Wofür steht DNA?",
+    "Antwort": "Desoxirebonukleinsäure",
+    "KursID": "3"
+  },
+  {
+    "Id": 4,
+    "Frage": "Wie heißt der Bär, der immer Honig isst?",
+    "Antwort": "Poo",
+    "KursID": "6"
+  },
+  {
+    "Id": 6,
+    "Frage": "Wie viel ist 2+2?",
+    "Antwort": "4",
+    "KursID": "4"
+  }
+
+]

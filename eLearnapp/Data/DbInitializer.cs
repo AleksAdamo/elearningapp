@@ -14,7 +14,7 @@ namespace eLearnapp.Data
         public static void Initialize(KursContext db, IHostingEnvironment env)
         {
             db.Database.EnsureCreated();
-            if(db.Users.Any() || db.Kategorien.Any() || db.Kurse.Any())
+            if(db.Users.Any() || db.Kategorien.Any() || db.Kurse.Any() || db.KursTeilnahmen.Any() || db.Abfragen.Any())
             {
                 return;
             }
@@ -24,10 +24,14 @@ namespace eLearnapp.Data
             var usersJson = File.ReadAllText(Path.Combine(path, "users.json"));
             var kategorienJson = File.ReadAllText(Path.Combine(path, "kategorien.json"));
             var kurseJson = File.ReadAllText(Path.Combine(path, "kurse.json"));
+            var abfrageJson = File.ReadAllText(Path.Combine(path, "abfragen.json"));
+            var kursteilnahmeJson = File.ReadAllText(Path.Combine(path, "kursteilnahmen.json"));
             //deserialisieren
             var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
             var kategorien = JsonConvert.DeserializeObject<List<Kategorie>>(kategorienJson);
             var kurse = JsonConvert.DeserializeObject<List<Kurs>>(kurseJson);
+            var abfragen = JsonConvert.DeserializeObject<List<Abfrage>>(abfrageJson);
+            var kursteilnahmen = JsonConvert.DeserializeObject<List<KursTeilnahme>>(kursteilnahmeJson);
             //im DbContext speichern
             foreach (var user in users)
             {
@@ -38,6 +42,11 @@ namespace eLearnapp.Data
             {
                 foreach (var kurs in kurse.Where(x => x.KategorieID == kategorie.KategorieID))
                 {
+                    foreach (var abfrage in abfragen.Where(x => x.KursID == kurs.KursID))
+                    {
+                        abfrage.Id = 0;
+                        kurs.Abfrage.Add(abfrage);
+                    }
                     kurs.KursID = 0;
                     kategorie.Kurse.Add(kurs);
                 }

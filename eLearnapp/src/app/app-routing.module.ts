@@ -5,13 +5,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { KursDetailComponent } from './kurse/kurs-detail/kurs-detail.component';
 import { AddKursComponent } from './kurse/add-kurs/add-kurs.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
+import { UsermenuComponent } from './admin/usermenu/usermenu.component';
+import { LoginComponent } from './login/login.component';
 //routen definieren
 const routes: Routes = [
     //Zu jeder Route die ich routen möchte vergebe ich einen Pfad und eine Komponente
-    { path: '', redirectTo: '/menu', pathMatch: 'full' }, //Standartseite
-    { path: 'menu', component: MenuComponent },
+    { path: '', redirectTo: 'login', pathMatch: 'full' }, //Standartseite
+    { path: 'login', component: LoginComponent },
+    { path: 'admin/kursmenu', component: MenuComponent },
     { path: 'kurs/add', component: AddKursComponent }, //neue komponente in der app.module.ts importieren
-    { path: 'kurs/:kursID', component: KursDetailComponent }
+    { path: 'kurs/:kursID', component: KursDetailComponent },
+    { path: 'user/userID', component: UserDetailComponent },
+    { path: 'admin/usermenu', component: UsermenuComponent }
 ]
 
 //Modul konfigurieren

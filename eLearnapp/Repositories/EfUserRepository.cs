@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eLearnapp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eLearnapp.Repositories
 {
@@ -42,7 +43,7 @@ namespace eLearnapp.Repositories
 
         public IEnumerable<User> GetUsers()
         {
-            return _db.Users;
+            return _db.Users.Include(x => x.KursTeilnahmen);
         }
 
         public User UpdateUser(User user)
@@ -53,6 +54,7 @@ namespace eLearnapp.Repositories
             userToUpdate.Email = user.Email;
             userToUpdate.Vorname = user.Vorname;
             userToUpdate.Nachname = user.Nachname;
+            userToUpdate.Passwort = user.Passwort;
             _db.SaveChanges();
             return userToUpdate;
         }

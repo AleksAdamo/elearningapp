@@ -19,5 +19,6 @@ namespace eLearnapp.Models
         public DbSet<Kategorie> Kategorien { get; set; }
         public DbSet<Kurs> Kurse { get; set; }
         public DbSet<KursTeilnahme> KursTeilnahmen { get; set; }
+        public DbSet<Abfrage> Abfragen { get; set; }
     }
 }

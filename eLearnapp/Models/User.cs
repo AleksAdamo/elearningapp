@@ -24,6 +24,10 @@ namespace eLearnapp.Models
         [Required]
         [MaxLength(30)]
         public string Nachname { get; set; }
+        [Required]
+        [MaxLength(20)]
+        public string Passwort { get; set; }
+        public Usertyp Usertyp { get; set; }
 
         public virtual ICollection<KursTeilnahme> KursTeilnahmen { get; set; }
     }

@@ -4,21 +4,8 @@
 
 .full-width {
     width: 100%;
-    color: white;
 }
 
-.select-fix {
-    margin: 30px, 0px, 10px, 0px;
-}
-
-.mat-hint {
-    color: white;
-}
-
-.mat-input-element {
-    color: white;
-}
-
-.mat-form-field-infix {
-    width: 300px;
-}
+/*.select-fix {
+    margin: 30px 0px 10px 0px;
+}*/
