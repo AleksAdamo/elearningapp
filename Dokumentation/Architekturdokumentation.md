@@ -28,84 +28,38 @@ gehören die
 
 ## Aufgabenstellung
 
-**Inhalt.**
-
-Kurzbeschreibung der fachlichen Aufgabenstellung, treibenden Kräfte,
-Extrakt (oder Abstract) der Anforderungen. Verweis auf (hoffentlich
-vorliegende) Anforderungsdokumente (mit Versionsbezeichnungen und
-Ablageorten).
-
-**Motivation.**
-
-Aus Sicht der späteren Nutzer ist die Unterstützung einer fachlichen
-Aufgabe oder Verbesserung der Qualität der eigentliche Beweggrund, ein
-neues System zu schaffen oder ein bestehendes zu modifizieren.
-
-**Form.**
-
-Kurze textuelle Beschreibung, eventuell in tabellarischer Use-Case Form.
-Sofern vorhanden sollte die Aufgabenstellung Verweise auf die
-entsprechenden Anforderungsdokumente enthalten.
-
-Halten Sie diese Auszüge so knapp wie möglich und wägen Sie Lesbarkeit
-und Redundanzfreiheit gegeneinander ab.
+- Im Rahmen der Veranstaltung BWI50202 .NET Vertiefung soll eine Webanwendung erstellt werden. Die angestrebte technische Lösung für das Projekt soll folgende Bestandteile enthalten:
+- Frontend (Präsentation + Geschäftslogik): Webanwendung (ASP. NET Core / Java EE)
+- Backend (Geschäftslogik + Datenhaltung): Web Services (ASP .NET Core Web-API / Spring Boot & Java)
+- Siehe Pflichtenheft.md
+- Die Aufgabe liegt darin mit nur wenigen Vorgaben eine Webanwendung zu entwickeln, welche eigenständig konkretisiert und ausgearbeitet werden muss. In diesem Fall wurde eine eigene Projektidee vorgeschlagen und mit dem Dozenten abgestimmt. 
 
 ## Qualitätsziele
 
-**Inhalt.**
+- Die Webanwendung muss für die verschiedenen Benutzer (insb. Studierende und Dozenten) übersichtlich sein
+- Die Webanwendung muss performant sein (schnell sein)
+- Die Webanwendung soll die Kontrollfragen zu verschieden Modulen und Fachbereichen enthalten können
 
-Die Top-3 bis Top-5 der Qualitätsziele für die Architektur, deren
-Erfüllung oder Einhaltung den maßgeblichen Stakeholdern besonders
-wichtig sind. Gemeint sind hier wirklich Qualitätsziele, die nicht
-unbedingt mit den Zielen des Projekts übereinstimmen. Beachten Sie den
-Unterschied.
+- zu 1. jede Funktion muss schnell, d.h. mit max. 7(bis zu 10) Klicks erreichbar sein
+- zu 2. die Webanwendung muss für mehrere Benutzer (für 50 Benutzer) gleichzeitig erreichbar sein, ohne dass es aus Sicht eines einzelnen Benutzers zu Laufzeiteinbußen kommt
+- zu 3. Nach einem Jahr müssen >90% der Module in der Webanwendung sein und diese müssen Kontrollfragen erhalten.
 
-**Motivation.**
-
-Weil Qualitätsziele grundlegende Architekturentscheidungen oft
-maßgeblich beeinflussen, sollten Sie die für Ihre Stakeholder relevanten
-Qualitätsziele kennen, möglichst konkret und operationalisierbar.
-
-Wenn Sie als Architekt nicht wissen, woran Ihre Arbeit gemessen wird, ….
-
-**Form.**
-
-Tabellarische Darstellung der Qualitätsziele mit möglichst konkreten
-Szenarien, geordnet nach Prioritäten.
+- zu 1: Test der Webanwendung
+- zu 1: Benutzertest mit Studierenden
+- zu 2: Test der Webanwendung mit mehreren Benutzern (bis zu 50)
+- zu 3: Statistische Auswertung: Zählen der Kurs in moodle und Vergleich mit dem Veranstaltungsangebot
 
 ## Stakeholder
 
-**Inhalt.**
-
-Expliziter Überblick über die Stakeholder des Systems, d.h. über alle
-Personen, Rollen oder Organisationen, die
-
--   die Architektur kennen sollten oder
-
--   von der Architektur überzeugt werden müssen,
-
--   mit Architektur oder Code arbeiten (z.B. Schnittstellen nutzen),
-
--   Dokumentation der Architektur für ihre eigene Arbeit benötigen,
-
--   Entscheidungen über das System und dessen Entwicklung treffen.
-
-**Motivation.**
-
-Sie sollten die Projektbeteiligten und -betroffenen kennen, sonst
-erleben Sie später im Entwicklungsprozess Überraschungen. Diese
-Stakeholder bestimmen unter anderem Umfang und Detaillierungsgrad der
-von Ihnen zu leistenden Arbeit und Ergebnisse.
-
-**Form.**
-
-Tabelle mit Rollen- oder Personennamen, sowie deren Erwartungshaltung
-bezüglich der Architektur und deren Dokumentation.
-
 | Rolle | Kontakt | Erwartungshaltung |
-| --- | --- | --- |
-| *&lt;Rolle-1&gt;* | *&lt;Kontakt-1&gt;* | *&lt;Erwartung-1&gt;* |
-| *&lt;Rolle-2&gt;* | *&lt;Kontakt-2&gt;* | *&lt;Erwartung-2&gt;* |
+
+- | Prof. Dr. Daniel Retkowitz (Dozent) | daniel.retkowitz@hs-niederrhein.de | --- |
+- | Tobias Jansen (Student) | Tobias.Jansen@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
+- | Henning Schilder (Student) | Henning.Schilder@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
+- | Jari Elfers (Student) | jari.elfers@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
+- | Aleks Adamovic (Student) | Aleks.Adamovic@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
+- | User (Student) | diverse | Erfolgreiche Nutzung der Anwendung |
+
 
 # 2 Randbedingungen
 
