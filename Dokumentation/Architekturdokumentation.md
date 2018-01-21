@@ -103,73 +103,15 @@ Organisatorische Vorgaben
 
 # 3 Kontextabgrenzung
 
-**Inhalt.**
-
-Die Kontextabgrenzung grenzt das System von allen Kommunikationspartnern
-(Nachbarsystemen und Benutzerrollen) ab. Sie legt damit die externen
-Schnittstellen fest.
-
-Differenzieren Sie fachlichen Kontext (fachliche Ein- und Ausgaben) und
-technischen Kontext (Kanäle, Protokolle, Hardware), falls nötig.
-
-**Motivation.**
-
-Die fachlichen und technischen Schnittstellen zu Kommunikationspartnern
-gehören zu den kritischsten Aspekten eines Systems. Stellen Sie sicher,
-dass Sie diese komplett verstanden haben.
-
-**Form.**
-
-Verschiedene Optionen:
-
--   Diverse Kontextdiagramme
-
--   Listen von Kommunikationspartnern mit deren Schnittstellen
+- siehe: #3_Kontextabgrenzung_Kontextdiagramm.pdf
 
 ## Fachlicher Kontext
 
-**Inhalt.**
-
-Festlegung **aller** Kommunikationspartner (Nutzer, IT-Systeme, …) mit
-Erklärung der fachlichen Ein- und Ausgabedaten oder Schnittstellen.
-Zusätzlich bei Bedarf fachliche Datenformate oder Protokolle der
-Kommunikation mit den Nachbarsystemen.
-
-**Motivation.**
-
-Alle Beteiligten müssen verstehen, welche fachlichen Informationen mit
-der Umwelt ausgetauscht werden.
-
-**Form.**
-
-Alle Diagrammarten, die das System als Black Box darstellen und die
-fachlichen Schnittstellen zu den Nachbarn beschreiben.
-
-Alternativ oder ergänzend können Sie eine Tabelle verwenden. Der Titel
-gibt den Namen Ihres Systems wieder; die drei Spalten sind:
-Kommunikationspartner, Eingabe, Ausgabe.
-
-**&lt;Diagramm und/oder Tabelle&gt;**
-
-**&lt;optional: Erläuterung der externen fachlichen Schnittstellen&gt;**
+- siehe: #3_Fachlicher_Kontext_Frond-_Backend.pdf
 
 ## Technischer Kontext
 
-**Inhalt.**
-
-Technische Schnittstellen (Kanäle, Übertragungsmedien) zwischen dem
-System und seiner Umwelt. Zusätzlich eine Erklärung (*mapping*), welche
-fachlichen Ein- und Ausgaben über welche technischen Kanäle fließen.
-
-**Motivation.**
-
-Viele Stakeholder treffen Architekturentscheidungen auf Basis der
-technischen Schnittstellen des Systems zu seinem Kontext.
-
-Insbesondere Infrastruktur- oder Hardwareentwickler entscheiden auch
-über diese technischen Schnittstellen.
-
-**Form.**
+- siehe: #3_Technischer Kontext_UML_Deployment_Diagramm.pdf
 
 Beispielsweise UML Deployment-Diagramme mit den Kanälen zu
 Nachbarsystemen, begleitet von einer Tabelle, die Kanäle auf
@@ -184,295 +126,72 @@ Schnittstellen&gt;**
 
 # 4 Lösungsstrategie
 
-**Inhalt.**
-
-Kurzer Überblick über die grundlegenden Entscheidungen und
-Lösungsansätze, die Entwurf und Implementierung des Systems prägen.
-Hierzu gehören:
-
--   Technologieentscheidungen
-
--   Entscheidungen über die Top-Level-Zerlegung des Systems,
-    beispielsweise die Verwendung gesamthaft prägender Entwurfs- oder
-    Architekturmuster
-
--   Entscheidungen zur Erreichung der wichtigsten Qualitätsanforderungen
-
--   relevante organisatorische Entscheidungen, beispielsweise für
-    bestimmte Entwicklungsprozesse oder Delegation bestimmter Aufgaben
-    an andere Stakeholder.
-
-**Motivation.**
-
-Diese allerwichtigsten Entscheidungen bilden wesentliche „Eckpfeiler“
-der Architektur. Von ihnen hängen meistens viele weitere Entscheidungen
-oder Implementierungsregeln ab.
-
-**Form.**
-
-Fassen Sie die zentralen Entwurfsentscheidungen **kurz** zusammen.
-Motivieren Sie ausgehend von Aufgabenstellung, Qualitätszielen und
-Randbedingungen, was Sie entschieden haben und warum Sie so entschieden
-haben. Verweisen Sie eher auf weitere Ausführungen in Folgeabschnitten.
+- Wir haben uns entschieden die Webanwendung („09-eLearningApp“) in der Programmiersprachen Java/Typescript zu entwickeln. Weiterhin haben wir uns entschieden VisualStudio als Entwicklungsumgebung zu nutzen.
+- VisualStudio haben wir bereits in der Grundlagenveranstaltung kennen gelernt und intensiv genutzt, anfangs war geplant  ASP.NET Core MVC und das Entity Framework Core für unsere Entwicklung zu nutzen. Allerdings fiehl uns das Arbeiten damit sehr schwer.
+- Gemeinsam haben wir uns dann entschieden Angular für die Entwicklung zu nutzen. Die Dokumentation zu Angular ist umfangreich und relativ leicht verständlich, weiterhin gab es seitens von Projektmitgliedern schon erste Erfahrungen mit Angular. 
+- Die Zielumgebung soll plattformunabhängig sein, daher bietet sich Angular ebenfalls an. Die grafische Darstellung soll über einen Webbrowser realisiert werden. Das Pflichtenheft dient als Grundlage für den angestrebten Funktionsumfang, die vorhandenen Use-Cases unterstützen uns dabei die Funktionen umzusetzen. 
+- Um die oben aufgeführten Qualitätsziele zu erreichen werden bei der Entwicklung stets umfangreiche Funktionstests durchgeführt, um mögliche Fehler schnell zu finden und zu eliminieren. 
+- Die Bearbeitung des Projekts findet unter ständigem Austausch der Projektmitglieder statt. Zur Unterstützung der Kommunikation greifen wir auf das Versionsverwaltungssystem GitHub zurück. Die Entwicklung des Programmcodes wird hauptsächlich durch die Mitglieder mit dem höheren Verständnis für die Programmierung übernommen.
+- Die anderen Mitglieder kümmern sich verstärkt um die Organisation und Dokumentation des Projektes.
 
 # 5 Bausteinsicht
 
-**Inhalt.**
+- siehe: #5_Bausteinsicht.pdf
 
-Diese Sicht zeigt die statische Zerlegung des Systems in Bausteine
-(Module, Komponenten, Subsysteme, Klassen, Interfaces, Pakete,
-Bibliotheken, Frameworks, Schichten, Partitionen, Tiers, Funktionen,
-Makros, Operationen, Datenstrukturen…) sowie deren Beziehungen.
+Ebene-1
+eLearning-App Whitebox-Sicht
+• Zweck / Verantwortlichkeit: Gesamte eLearning Webanwendungen
+• Schnittstelle(n): keine Nachbarsysteme (integrierte Datenbank)
+• Erfüllte Anforderungen: 
+• Ablageort / Datei: 
+• Sonstige Verwaltungsinformation: Autor, Version, Datum, Änderungshistorie
 
-Diese Sicht sollte in jeder Architekturdokumentation vorhanden sein . In
-der Analogie zum Hausbau bildet die Bausteinsicht den *Grundrissplan*.
+Ebene-2
+Log-In Whitebox-Sicht
+• Zweck / Verantwortlichkeit: Ermöglicht den Zugang zur Anwendung 
+• Schnittstelle(n): Modulwahl
+• Erfüllte Anforderungen: 
+• Ablageort / Datei: 
+• Sonstige Verwaltungsinformation: Autor, Version, Datum, Änderungshistorie
 
-**Motivation.**
+Ebene-2
+Modulwahl Whitebox-Sicht
+• Zweck / Verantwortlichkeit: Dient der Auswahl der Studiengänge/Module
+• Schnittstelle(n): Log-In / Abfragen (Kontrollfragen)
+• Erfüllte Anforderungen: 
+• Ablageort / Datei: 
+• Sonstige Verwaltungsinformation: Autor, Version, Datum, Änderungshistorie
 
-Behalten Sie den Überblick über den Quellcode, indem Sie die statische
-Struktur des Systems durch Abstraktion verständlich machen.
+Ebene-2
+Abfrage Whitebox-Sicht
+• Zweck / Verantwortlichkeit: Dient der Durchführung der Abfragen (Kontrollfragen)
+• Schnittstelle(n): Modulwahl / Fortschritt
+• Erfüllte Anforderungen: 
+• Ablageort / Datei: 
+• Sonstige Verwaltungsinformation: Autor, Version, Datum, Änderungshistorie
 
-Damit ermöglichen Sie Kommunikation auf abstrakterer Ebene, ohne zu
-viele Implementierungsdetails offenlegen zu müssen.
+Ebene-2
+Fortschritt Whitebox-Sicht
+• Zweck / Verantwortlichkeit: Ermöglicht den Benutzern die Überwachung Ihres Fortschritts
+• Schnittstelle(n): Abfragen (Kontrollfragen)
+• Erfüllte Anforderungen: 
+• Ablageort / Datei: 
+• Sonstige Verwaltungsinformation: Autor, Version, Datum, Änderungshistorie
 
-**Form.**
-
-Die Bausteinsicht ist eine hierarchische Sammlung von Blackboxen und
-Whiteboxen (siehe Abbildung unten) und deren Beschreibungen.
-
-![Baustein Sichten](images/05_building_blocks-DE.png)
-
-**Ebene 1** ist die Whitebox-Beschreibung des Gesamtsystems, zusammen
-mit Blackbox-Beschreibungen der darin enthaltenen Bausteine.
-
-**Ebene 2** zoomt in einige Bausteine der Ebene 1 hinein. Sie enthält
-somit die Whitebox-Beschreibungen ausgewählter Bausteine der Ebene 1,
-jeweils zusammen mit Blackbox-Beschreibungen darin enthaltener
-Bausteine.
-
-**Ebene 3** zoomt in einige Bausteine der Ebene 2 hinein, usw.
-
-## Whitebox Gesamtsystem
-
-An dieser Stelle beschreiben Sie die Zerlegung des Gesamtsystems anhand
-des nachfolgenden Whitebox-Templates. Dieses enthält:
-
--   Ein Übersichtsdiagramm
-
--   die Begründung dieser Zerlegung
-
--   Blackbox-Beschreibungen der hier enthaltenen Bausteine. Dafür haben
-    Sie verschiedene Optionen:
-
-    -   in *einer* Tabelle, gibt einen kurzen und pragmatischen
-        Überblick über die enthaltenen Bausteine sowie deren
-        Schnittstellen.
-
-    -   als Liste von Blackbox-Beschreibungen der Bausteine, gemäß dem
-        Blackbox-Template (siehe unten). Diese Liste können Sie, je nach
-        Werkzeug, etwa in Form von Unterkapiteln (Text), Unter-Seiten
-        (Wiki) oder geschachtelten Elementen (Modellierungswerkzeug)
-        darstellen.
-
--   (optional:) wichtige Schnittstellen, die nicht bereits im
-    Blackbox-Templates eines der Bausteine erläutert werden, aber für
-    das Verständnis der Whitebox von zentraler Bedeutung sind. Aufgrund
-    der vielfältigen Möglichkeiten oder Ausprägungen von Schnittstellen
-    geben wir hierzu kein weiteres Template vor. Im schlimmsten Fall
-    müssen Sie Syntax, Semantik, Protokolle, Fehlerverhalten,
-    Restriktionen, Versionen, Qualitätseigenschaften, notwendige
-    Kompatibilitäten und vieles mehr spezifizieren oder beschreiben. Im
-    besten Fall kommen Sie mit Beispielen oder einfachen Signaturen
-    zurecht.
-
-***&lt;Übersichtsdiagramm&gt;***
-
-Begründung
-
-:   *&lt;Erläuternder Text&gt;*
-
-Enthaltene Bausteine
-
-:   *&lt;Beschreibung der enhaltenen Bausteine (Blackboxen)&gt;*
-
-Wichtige Schnittstellen
-
-:   *&lt;Beschreibung wichtiger Schnittstellen&gt;*
 
 Hier folgen jetzt Erläuterungen zu Blackboxen der Ebene 1.
+- | Log-In | Ermöglicht den Login in die Anwendung mit Benutzername und Passwort |
+- | Modulwahl | Ermöglicht dem Benutzer die Auswahl von Kursen (Modulen), zuvor muss der Benutzer aber den Log-In durchführen |
+- | Abfrage | Ermöglicht dem Benutzer die Durchführung der Abfragen (Kontrollfragen), zuvor muss der Benutzer einen Kurs(Modul) ausgewählt haben |
+- | Fortschritt | Ermöglicht dem Benutzer eine Übersicht über seine bisherigen Fortschritte/Erfolge, Fortschritte/Erfolge werden nur erzeugt wenn der Benutzer Abfragen (Kontrollfragen) durchgeführt hat |
 
-Falls Sie die tabellarische Beschreibung wählen, so werden Blackboxen
-darin nur mit Name und Verantwortung nach folgendem Muster beschrieben:
-
-| Name | Verantwortung |
-| --- | --- |
-| *&lt;Blackbox 1&gt;* | *&lt;Text&gt;* |
-| *&lt;Blackbox 2&gt;* | *&lt;Text&gt;* |
-
-Falls Sie die ausführliche Liste von Blackbox-Beschreibungen wählen,
-beschreiben Sie jede wichtige Blackbox in einem eigenen
-Blackbox-Template. Dessen Überschrift ist jeweils der Namen dieser
-Blackbox.
-
-### &lt;Name Blackbox 1&gt;
-
-An dieser Stelle beschreiben Sie die &lt;Blackbox 1&gt; anhand des
-folgenden Blackbox-Templates:
-
--   Zweck/Verantwortung
-
--   Schnittstelle(n), sofern sie nicht als eigenständige Beschreibungen
-    herausgezogen sind. Hierzu gehören eventuell auch Qualitäts- und
-    Leistungsmerkmale dieser Schnittstelle.
-
--   (Optional) Qualitäts-/Leistungsmerkmale der Blackbox, beispielsweise
-    Verfügbarkeit, Laufzeitverhalten…
-
--   (Optional) Ablageort/Datei(en)
-
--   (Optional) Erfüllte Anforderungen, falls Sie Traceability zu
-    Anforderungen benötigen.
-
--   (Optional) Offene Punkte/Probleme/Risiken
-
-*&lt;Zweck/Verantwortung&gt;*
-
-*&lt;Schnittstelle(n)&gt;*
-
-*&lt;(Optional) Qualitäts-/Leistungsmerkmale&gt;*
-
-*&lt;(Optional) Ablageort/Datei(en)&gt;*
-
-*&lt;(Optional) Erfüllte Anforderungen&gt;*
-
-*&lt;(optional) Offene Punkte/Probleme/Risiken&gt;*
-
-### &lt;Name Blackbox 2&gt;
-
-*&lt;Blackbox-Template&gt;*
-
-### &lt;Name Blackbox n&gt;
-
-*&lt;Blackbox-Template&gt;*
-
-### &lt;Name Schnittstelle 1&gt;
-
-…
-
-### &lt;Name Schnittstelle m&gt;
-
-## Ebene 2
-
-An dieser Stelle können Sie den inneren Aufbau (einiger) Bausteine aus
-Ebene 1 als Whitebox beschreiben.
-
-Welche Bausteine Ihres Systems Sie hier beschreiben, müssen Sie selbst
-entscheiden. Bitte stellen Sie dabei Relevanz vor Vollständigkeit.
-Skizzieren Sie wichtige, überraschende, riskante, komplexe oder
-besonders volatile Bausteine. Normale, einfache oder standardisierte
-Teile sollten Sie weglassen.
-
-### Whitebox *&lt;Baustein 1&gt;*
-
-…zeigt das Innenleben von *Baustein 1*.
-
-*&lt;Whitebox-Template&gt;*
-
-### Whitebox *&lt;Baustein 2&gt;*
-
-*&lt;Whitebox-Template&gt;*
-
-…
-
-### Whitebox *&lt;Baustein m&gt;*
-
-*&lt;Whitebox-Template&gt;*
-
-## Ebene 3
-
-An dieser Stelle können Sie den inneren Aufbau (einiger) Bausteine aus
-Ebene 2 als Whitebox beschreiben.
-
-Bei tieferen Gliederungen der Architektur kopieren Sie diesen Teil von
-arc42 für die weiteren Ebenen.
-
-### Whitebox &lt;\_Baustein x.1\_&gt;
-
-…zeigt das Innenleben von *Baustein x.1*.
-
-*&lt;Whitebox-Template&gt;*
-
-### Whitebox &lt;\_Baustein x.2\_&gt;
-
-*&lt;Whitebox-Template&gt;*
-
-### Whitebox &lt;\_Baustein y.1\_&gt;
-
-*&lt;Whitebox-Template&gt;*
+Hier folgen jetzt Erläuterungen zu Blackboxen der Ebene 2.
+- | Modulauswahl | Nach erfolgreicher Studiengangwahl muss der Benutzer ein passendes Modul auswählen, darauf folgt die Möglichkeit der Abfragen (Kontrollfragen) |
 
 # 6 Laufzeitsicht
 
-**Inhalt.**
-
-Diese Sicht erklärt konkrete Abläufe und Beziehungen zwischen Bausteinen
-in Form von Szenarien aus folgenden Bereichen:
-
--   Wichtige Abläufe oder *Features*: Wie führen die Bausteine der
-    Architektur die wichtigsten Abläufe durch?
-
--   Interaktionen an kritischen externen Schnittstellen: Wie arbeiten
-    Bausteine mit Nutzern und Nachbarsystemen zusammen?
-
--   Betrieb und Administration: Inbetriebnahme, Start, Stop.
-
--   Fehler- und Ausnahmeszenarien
-
-Anmerkung: Kriterium für die Auswahl der möglichen Szenarien (d.h.
-Abläufe) des Systems ist deren Architekturrelevanz. Es geht nicht darum,
-möglichst viele Abläufe darzustellen, sondern eine angemessene Auswahl
-zu dokumentieren.
-
-**Motivation.**
-
-Sie sollten verstehen wie (Instanzen von) Bausteine(n) Ihres Systems
-ihre jeweiligen Aufgaben erfüllen und zur Laufzeit miteinander
-kommunizieren.
-
-Nutzen Sie solche Szenarien in der Dokumentation hauptsächlich zur
-besseren Kommunikation mit Stakeholdern, die statische Modelle (z.B.
-Bausteinsicht, Verteilungssicht) weniger verständlich finden.
-
-**Form.**
-
-Für die Beschreibung von Szenarien gibt es zahlreiche
-Ausdrucksmöglichkeiten. Nutzen Sie beispielsweise:
-
--   Nummerierte Schrittfolgen oder Aufzählungen in Umgangssprache
-
--   Aktivitäts- oder Flussdiagramme
-
--   Sequenzdiagramme
-
--   BPMN oder EPKs (Ereignis-Prozessketten)
-
--   Zustandsautomaten
-
--   …
-
-### *&lt;Bezeichnung Laufzeitszenario 1&gt;*
-
--   &lt;hier Laufzeitdiagramm oder Ablaufbeschreibung einfügen&gt;
-
--   &lt;hier Besonderheiten bei dem Zusammenspiel der Bausteine in
-    diesem Szenario erläutern&gt;
-
-### *&lt;Bezeichnung Laufzeitszenario 2&gt;*
-
-…
-
-### *&lt;Bezeichnung Laufzeitszenario n&gt;*
-
-…
+- siehe: #6_Aktivitätsdiagramm_Benutzersicht.pdf
+- siehe: #6_Aktivitätsdiagramm_Adminsicht.pdf
 
 # 7 Verteilungssicht
 
