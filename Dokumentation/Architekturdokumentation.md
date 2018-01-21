@@ -85,6 +85,22 @@ Randbedingungen oder übergreifende Konventionen (beispielsweise
 Programmier- oder Versionierungsrichtlinien, Dokumentation- oder
 Namenskonvention)
 
+Technische Vorgaben
+
+- Programmiersprache: Java/TypeScript
+- Framework: Angular
+- IDE: Visual Studio 2017
+- Zielumgebung: Plattformunabhängig (Webanwendung)
+- Grafische Darstellung: Webbrowser
+
+Organisatorische Vorgaben
+
+- Zeitrahmen: Mitte Oktober 2017 bis Mitte Januar 2018 (drei Monate)
+- Team: Gruppe aus vier Studenten
+- Dokumentation: Pflichtenheft und Architekturdokumentation
+- Präsentation: 30 Min. bestehend aus PP-Präs. und Poster
+- Versionsverwaltungssystem: GitHub, Trello (nur intern)
+
 # 3 Kontextabgrenzung
 
 **Inhalt.**
