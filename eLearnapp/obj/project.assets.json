@@ -2735,15 +2735,6 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Postman/1.0.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Postman.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Postman.dll": {}
-        }
-      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -7565,16 +7556,6 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
-      ]
-    },
-    "Postman/1.0.0.1": {
-      "sha512": "C3QhwEMH49OKoQ3wSWC0BBAaanuNevxsBnyEWEb0e2lj/xJOYiNp6Q3oB9GxdCUQZxwaVyYpN87Mv79IwkPKiQ==",
-      "type": "package",
-      "path": "postman/1.0.0.1",
-      "files": [
-        "lib/net40/Postman.dll",
-        "postman.1.0.0.1.nupkg.sha512",
-        "postman.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -12552,12 +12533,11 @@
       "Microsoft.AspNetCore.StaticFiles >= 2.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.1",
-      "Microsoft.NETCore.App >= 2.0.0",
-      "Postman >= 1.0.0.1"
+      "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jari\\.nuget\\packages\\": {},
+    "C:\\Users\\nwaleks\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
@@ -12567,18 +12547,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jari\\Source\\Repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
+      "projectUniqueName": "C:\\Users\\nwaleks\\source\\repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
       "projectName": "eLearnapp",
-      "projectPath": "C:\\Users\\Jari\\Source\\Repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
-      "packagesPath": "C:\\Users\\Jari\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jari\\Source\\Repos\\09-eLearningApp\\eLearnapp\\obj\\",
+      "projectPath": "C:\\Users\\nwaleks\\source\\repos\\09-eLearningApp\\eLearnapp\\eLearnapp.csproj",
+      "packagesPath": "C:\\Users\\nwaleks\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nwaleks\\source\\repos\\09-eLearningApp\\eLearnapp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nwaleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -12623,10 +12603,6 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
-          },
-          "Postman": {
-            "target": "Package",
-            "version": "[1.0.0.1, )"
           }
         },
         "imports": [
@@ -12636,17 +12612,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Das Paket \"Postman 1.0.0.1\" wurde nicht mit dem Projektzielframework \".NETCoreApp,Version=v2.0\", sondern mit \".NETFramework,Version=v4.6.1\" wiederhergestellt. Dieses Paket ist mit Ihrem Projekt möglicherweise nicht vollständig kompatibel.",
-      "libraryId": "Postman",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }

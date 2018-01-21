@@ -1,31 +1,92 @@
-[{
-        "KursID": 1,
-        "Name": "Objektorientiertes Programmieren",
-        "KategorieID": "1"
-    },
-    {
-        "KursID": 2,
-        "Name": "Buchhaltung",
-        "KategorieID": "2"
-    },
-    {
-        "KursID": 3,
-        "Name": "Informationswirtschaft",
-        "KategorieID": "3"
-    },
-    {
-        "KursID": 4,
-        "Name": "eBusiness",
-        "KategorieID": "3"
-    },
-    {
-        "KursID": 5,
-        "Name": "Produktion",
-        "KategorieID": "2"
-    },
-    {
-        "KursID": 6,
-        "Name": "Datenbanken",
-        "KategorieID": "1"
-    }
+[
+  {
+    "KursID": 1,
+    "Name": "Objektorientiertes Programmieren",
+    "KategorieID": "1"
+  },
+  {
+    "KursID": 2,
+    "Name": "Buchhaltung",
+    "KategorieID": "2"
+  },
+  {
+    "KursID": 3,
+    "Name": "Informationswirtschaft",
+    "KategorieID": "3"
+  },
+  {
+    "KursID": 4,
+    "Name": "eBusiness",
+    "KategorieID": "3"
+  },
+  {
+    "KursID": 5,
+    "Name": "Produktion",
+    "KategorieID": "2"
+  },
+  {
+    "KursID": 6,
+    "Name": "Datenbanken",
+    "KategorieID": "1"
+  },
+  {
+    "KursID": 7,
+    "Name": "Recht für Informatiker",
+    "KategorieID": "4"
+  },
+  {
+    "KursID": 8,
+    "Name": "Bürgerliches Recht I",
+    "KategorieID": "4"
+  },
+  {
+    "KursID": 9,
+    "Name": "Handelsrecht",
+    "KategorieID": "4"
+  },
+  {
+    "KursID": 10,
+    "Name": "Objektorientierte Programmierung II",
+    "KategorieID": "1"
+  },
+  {
+    "KursID": 11,
+    "Name": "Algorithmen und Datenstrukturen",
+    "KategorieID": "1"
+  },
+  {
+    "KursID": 12,
+    "Name": "Mobile Datenkommunikation",
+    "KategorieID": "3"
+  },
+  {
+    "KursID": 13,
+    "Name": "Einkauf und Logistik",
+    "KategorieID": "2"
+  },
+  {
+    "KursID": 14,
+    "Name": "Marketing",
+    "KategorieID": "2"
+  },
+  {
+    "KursID": 15,
+    "Name": "Volkwirtschaftslehre",
+    "KategorieID": "2"
+  },
+  {
+    "KursID": 16,
+    "Name": "Wirtschaftsenglisch Grundlagen",
+    "KategorieID": "5"
+  },
+  {
+    "KursID": 17,
+    "Name": "Wirtschaftsenglisch Vertiefung",
+    "KategorieID": "5"
+  },
+  {
+    "KursID": 18,
+    "Name": "Requirements Engineering",
+    "KategorieID": "3"
+  }
 ]

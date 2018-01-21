@@ -17,6 +17,7 @@
     <None Remove="src\app\kurse\kurs.ts" />
     <None Remove="src\app\login\login.component.ts" />
     <None Remove="src\app\menu\menu.component.ts" />
+    <None Remove="src\app\registration\registration.component.ts" />
     <None Remove="src\app\shared\material.module.ts" />
     <None Remove="src\app\users\user.ts" />
   </ItemGroup>
@@ -30,7 +31,6 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
-    <PackageReference Include="Postman" Version="1.0.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +48,7 @@
     <TypeScriptCompile Include="src\app\kurse\kurs.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\app\menu\menu.component.ts" />
+    <TypeScriptCompile Include="src\app\registration\registration.component.ts" />
     <TypeScriptCompile Include="src\app\shared\material.module.ts" />
     <TypeScriptCompile Include="src\app\users\user.ts" />
   </ItemGroup>

@@ -1,0 +1,70 @@
+﻿<form class="example-form">
+    <table class="example-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <input matInput #Vorname maxlength="30" placeholder="Vorname" value="Justin">
+                    <mat-hint align="end">{{vorname.value.length}} / 30</mat-hint>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <input matInput #Nachname maxlength="30" placeholder="Nachname" value="Bieber">
+                    <mat-hint align="end">{{nachname.value.length}} / 30</mat-hint>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Email">kidrauhl@gmail.com</textarea>
+        </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <input matInput #Passwort maxlength="20" placeholder="Passwort" value="123456">
+                    <mat-hint align="end">{{passwort.value.length}} / 20</mat-hint>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <button mat-button (click)="registrate()">registrieren</button>
+</form>
+
+
+
+
+
+<!--<div class="registration">
+    <h2>Registrieren</h2>
+    <div>
+        <label for="vorname">Vorname: </label>
+        <br />
+        <input type="text" name="vorname" class="register-form" ng-model="user.vorname" />
+    </div>
+    <div>
+        <label for="vorname">Nachname: </label>
+        <br />
+        <input type="text" name="vorname" class="register-form" ng-model="user.nachname" />
+    </div>
+    <div>
+        <label for="vorname">Email: </label>
+        <br />
+        <input type="text" name="vorname" class="register-form" ng-model="user.email" />
+    </div>
+    <div>
+        <label for="vorname">Passwort: </label>
+        <br />
+        <input type="text" name="vorname" class="register-form" ng-model="user.passwort" />
+    </div>
+    <div class="register-actions">
+        <button (click)="goOn()">Registrieren</button>
+    </div>
+</div>
+
+    -->

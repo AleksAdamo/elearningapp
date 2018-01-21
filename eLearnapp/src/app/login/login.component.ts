@@ -2,7 +2,7 @@
 import { Router } from '@angular/router';
 import { KurseService } from '../kurse.service';
 import { User } from '../users/user';
-
+import { FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -27,4 +27,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/admin/kursmenu'])
     }
 
+    emailFormControl = new FormControl('', [
+        Validators.required,
+        Validators.email,
+    ]);
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms'; //Um Einträge ändern zu können
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //Um Einträge ändern zu können
 import { NgModule, Component } from '@angular/core';
 
 import { MatToolbarModule, MatListModule, MatInputModule, MatSelectModule, MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule, MatGridListModule } from '@angular/material';
@@ -23,6 +23,7 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UsermenuComponent } from './admin/usermenu/usermenu.component';
 import { KursmenuComponent } from './admin/kursmenu/kursmenu.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -35,13 +36,15 @@ import { LoginComponent } from './login/login.component';
       UserDetailComponent,
       UsermenuComponent,
       KursmenuComponent,
-      LoginComponent
+      LoginComponent,
+      RegistrationComponent
   ],
   entryComponents: [DeleteDialogComponent],
   imports: [
       BrowserModule,
       BrowserAnimationsModule,
       FormsModule,
+      ReactiveFormsModule,
       MatToolbarModule,
       HttpModule,
       FlexLayoutModule,
