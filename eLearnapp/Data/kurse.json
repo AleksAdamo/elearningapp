@@ -3,108 +3,108 @@
     "KursID": 1,
     "Name": "Objektorientiertes Programmieren",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "1"
+    "KategorieID": 1
   },
   {
     "KursID": 2,
     "Name": "Buchhaltung",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "2"
+    "KategorieID": 2
   },
   {
     "KursID": 3,
     "Name": "Informationswirtschaft",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "3"
+    "KategorieID": 3
   },
   {
     "KursID": 4,
     "Name": "eBusiness",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "3"
+    "KategorieID": 3
   },
   {
     "KursID": 5,
     "Name": "Produktion",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "2"
+    "KategorieID": 2
   },
   {
     "KursID": 6,
     "Name": "Datenbanken",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "1"
+    "KategorieID": 1
   },
   {
     "KursID": 7,
     "Name": "Recht für Informatiker",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "4"
+    "KategorieID": 3
   },
   {
     "KursID": 8,
     "Name": "Bürgerliches Recht I",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "4"
+    "KategorieID": 2
   },
   {
     "KursID": 9,
     "Name": "Handelsrecht",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "4"
+    "KategorieID": 2
   },
   {
     "KursID": 10,
     "Name": "Objektorientierte Programmierung II",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "1"
+    "KategorieID": 1
   },
   {
     "KursID": 11,
     "Name": "Algorithmen und Datenstrukturen",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "1"
+    "KategorieID": 1
   },
   {
     "KursID": 12,
     "Name": "Mobile Datenkommunikation",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "3"
+    "KategorieID": 3
   },
   {
     "KursID": 13,
     "Name": "Einkauf und Logistik",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "2"
+    "KategorieID": 2
   },
   {
     "KursID": 14,
     "Name": "Marketing",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "2"
+    "KategorieID": 2
   },
   {
     "KursID": 15,
     "Name": "Volkwirtschaftslehre",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "2"
+    "KategorieID": 2
   },
   {
     "KursID": 16,
     "Name": "Wirtschaftsenglisch Grundlagen",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "5"
+    "KategorieID": 2
   },
   {
     "KursID": 17,
     "Name": "Wirtschaftsenglisch Vertiefung",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "5"
+    "KategorieID": 2
   },
   {
     "KursID": 18,
     "Name": "Requirements Engineering",
     "Beschreibung": "Hier kommt eine Beschreibung rein!",
-    "KategorieID": "3"
+    "KategorieID": 3
   }
 ]

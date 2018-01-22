@@ -3,7 +3,7 @@
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Email" [formControl]="emailFormControl">
+                <input matInput placeholder="Email" [(ngModel)]="user.email" maxlength="30" name="user.email" />
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                     Please enter a valid email address
                 </mat-error>
@@ -17,15 +17,15 @@
     <div>
         <form class="example-form">
             <mat-form-field class="example-full-width">
-                <input matInput #passwort maxlength="20" placeholder="Passwort">
+               <input matInput placeholder="passwort" [(ngModel)]="user.passwort" maxlength="20" name="user.passwort" />
                 <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-                <mat-hint align="end">{{passwort.value.length}} / 20</mat-hint>
+                <mat-hint align="end">{{user.passwort.length}} / 20</mat-hint>
             </mat-form-field>
         </form>
     </div>
     <br />
     <div class="login-actions">
-        <button mat-button (click)="goOn()">Login</button>
+        <button mat-button (click)="login(user.passwort, user.email)">Login</button>
         <a mat-button routerLink="../registration">Registrieren</a>
     </div>
 </div>

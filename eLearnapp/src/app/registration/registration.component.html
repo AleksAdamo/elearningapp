@@ -1,27 +1,35 @@
 ﻿<form class="example-form">
     <mat-form-field class="full-widht">
-        <input matInput placeholder="Vorname" [(ngModel)]="user.vorname" maxlength="30" name="vorname" />
+        <input matInput placeholder="Vorname" [formControl]="vornameFormControl" [(ngModel)]="user.vorname" maxlength="30" name="vorname" />
+        <mat-error *ngIf="vornameFormControl.hasError('required')">
+            Vorname is <strong>required</strong>
+        </mat-error>
         <mat-hint align="end">{{user.vorname.length}} / 30</mat-hint>
     </mat-form-field>
     <mat-form-field class="full-widht">
-        <input matInput placeholder="Nachname" [(ngModel)]="user.nachname" maxlength="30" name="nachname" />
+        <input matInput placeholder="Nachname" [formControl]="nachnameFormControl" [(ngModel)]="user.nachname" maxlength="30" name="nachname" />
+        <mat-error *ngIf="nachnameFormControl.hasError('required')">
+            Nachname is <strong>required</strong>
+        </mat-error>
         <mat-hint align="end">{{user.nachname.length}} / 30</mat-hint>
     </mat-form-field>
     <mat-form-field class="full-widht">
-        <input matInput placeholder="Email" [(ngModel)]="user.email" maxlength="30" name="email" />
+        <input matInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="user.email" maxlength="30" name="email" />
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
         <mat-hint align="end">{{user.email.length}} / 30</mat-hint>
     </mat-form-field>
     <mat-form-field class="full-widht">
-        <input matInput placeholder="Password" [(ngModel)]="user.password" maxlength="30" name="passwort" />
+        <input matInput placeholder="Password" [formControl]="passwordFormControl" [(ngModel)]="user.password" maxlength="30" name="passwort" />
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
         <mat-hint align="end">{{user.passwort.length}} / 30</mat-hint>
     </mat-form-field>
     <br />
     <button mat-button (click)="save()">registrieren</button>
 </form>
-
-
-
-
 
 <!--<div class="registration">
     <h2>Registrieren</h2>

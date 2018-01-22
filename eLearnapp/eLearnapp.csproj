@@ -47,7 +47,6 @@
     <TypeScriptCompile Include="src\app\kurse.service.ts" />
     <TypeScriptCompile Include="src\app\kurse\kurs.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
-    <TypeScriptCompile Include="src\app\menu\menu.component.ts" />
     <TypeScriptCompile Include="src\app\registration\registration.component.ts" />
     <TypeScriptCompile Include="src\app\shared\material.module.ts" />
     <TypeScriptCompile Include="src\app\users\user.ts" />

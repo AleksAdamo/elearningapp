@@ -10,10 +10,10 @@ namespace eLearnapp.Models
     {
         public int Id { get; set; }
         [Required]
-        [MaxLength(300)]
+        [MaxLength(500)]
         public string Frage { get; set; }
         [Required]
-        [MaxLength(300)]
+        [MaxLength(1000)]
         public string Antwort { get; set; }
         public int KursID { get; set; }
         public Kurs Kurs { get; set; }

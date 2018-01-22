@@ -28,4 +28,20 @@ export class RegistrationComponent implements OnInit {
         this.kurseService.saveUser(this.user).then(() => this.router.navigate(['/']));
     }
 
+    vornameFormControl = new FormControl('', [
+        Validators.required,
+    ]);
+
+    nachnameFormControl = new FormControl('', [
+        Validators.required,
+    ]);
+
+    emailFormControl = new FormControl('', [
+        Validators.required,
+    ]);
+
+    passwordFormControl = new FormControl('', [
+        Validators.required,
+    ]);
+
 }

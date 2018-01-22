@@ -3,11 +3,21 @@
 }
 
 .mat-divider {
-    border-color: hotpink;
+    border-color: black;
 }
 
 .add-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+h3 {
+    font-size: 30px;
+    border-bottom: 2px solid black;
+}
+
+h2 {
+    font-size: 35px;
+    border-bottom: 5px solid black
 }

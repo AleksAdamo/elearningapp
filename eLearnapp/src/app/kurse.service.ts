@@ -29,6 +29,12 @@ export class KurseService {
             .then(r => r.json() as Kurs);
     }
 
+    getUserById(UserID: number): Promise<User> {
+        return this.http.get(`api/users/${UserID}`)
+            .toPromise()
+            .then(r => r.json() as User);
+    }
+
     saveKurs(kurs: Kurs): Promise<Kurs> {
         if (kurs.kursID) {
             return this.http.put(`api/kurse/${kurs.kursID}`, kurs) //backtape weil wir ein TemplateString benutzen
@@ -67,10 +73,4 @@ export class KurseService {
             .then(r => r.json() as User[]);
     }
 
-    getUserById(UserID: number): Promise<User> {
-        return this.http.get(`api/users/${UserID}`)
-            .toPromise()
-            .then(r => r.json() as User);
-    }
-
-    }
+}

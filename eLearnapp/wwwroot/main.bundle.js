@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n", ""]);
+exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: black;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n\r\nh3 {\r\n    font-size: 30px;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\nh2 {\r\n    font-size: 35px;\r\n    border-bottom: 5px solid black\r\n}\r\n", ""]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin/kursmenu/kursmenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Kursübersicht</h2>\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\">\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">assignment_turned_in</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
+module.exports = "<h2>Kursübersicht</h2>\r\n<br />\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\">\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <br />\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">assignment_turned_in</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
 
 /***/ }),
 
@@ -108,7 +108,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.userlist {\r\n    margin-right: 150px;\r\n    margin-bottom: 30px;\r\n    border-bottom: 2px solid hotpink;\r\n}\r\n\r\n.mat-grid-tile {\r\n    text-align: left;\r\n    -webkit-box-pack: start !important;\r\n        -ms-flex-pack: start !important;\r\n            justify-content: flex-start !important;\r\n    border: 1px solid black;\r\n}\r\n\r\nimg {\r\n    border: 2px solid black !important;\r\n}\r\n\r\n.headContent {\r\n    margin-right: 150px;\r\n    margin-bottom: 10px;\r\n    margin-top: 10px;\r\n    border-left: 2px solid hotpink;\r\n    border-right: 2px solid hotpink;\r\n}\r\n\r\nh2 {\r\n    text-align: left;\r\n    font-size: x-large;\r\n}", ""]);
+exports.push([module.i, ".mat-divider {\r\n    border-color: black;\r\n}\r\n\r\n.userlist {\r\n    margin-right: 150px;\r\n    margin-bottom: 30px;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n.mat-grid-tile {\r\n    text-align: left;\r\n    -webkit-box-pack: start !important;\r\n        -ms-flex-pack: start !important;\r\n            justify-content: flex-start !important;\r\n    border: 1px solid black;\r\n}\r\n\r\nimg {\r\n    border: 2px solid black !important;\r\n}\r\n\r\n.headContent {\r\n    margin-right: 150px;\r\n    margin-bottom: 10px;\r\n    margin-top: 10px;\r\n    border-left: 2px solid black;\r\n    border-right: 2px solid black;\r\n}\r\n\r\nh2 {\r\n    text-align: left;\r\n    font-size: x-large;\r\n}", ""]);
 
 // exports
 
@@ -184,13 +184,13 @@ var UsermenuComponent = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu_menu_component__ = __webpack_require__("../../../../../src/app/menu/menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kurse_kurs_detail_kurs_detail_component__ = __webpack_require__("../../../../../src/app/kurse/kurs-detail/kurs-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__kurse_add_kurs_add_kurs_component__ = __webpack_require__("../../../../../src/app/kurse/add-kurs/add-kurs.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__users_user_detail_user_detail_component__ = __webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_usermenu_usermenu_component__ = __webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kurse_kurs_detail_kurs_detail_component__ = __webpack_require__("../../../../../src/app/kurse/kurs-detail/kurs-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__kurse_add_kurs_add_kurs_component__ = __webpack_require__("../../../../../src/app/kurse/add-kurs/add-kurs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__users_user_detail_user_detail_component__ = __webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_usermenu_usermenu_component__ = __webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__admin_kursmenu_kursmenu_component__ = __webpack_require__("../../../../../src/app/admin/kursmenu/kursmenu.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -199,7 +199,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-//wohin möchte ich navigieren?
 
 
 
@@ -211,13 +210,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var routes = [
     //Zu jeder Route die ich routen möchte vergebe ich einen Pfad und eine Komponente
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */] },
-    { path: 'registration', component: __WEBPACK_IMPORTED_MODULE_8__registration_registration_component__["a" /* RegistrationComponent */] },
-    { path: 'admin/kursmenu', component: __WEBPACK_IMPORTED_MODULE_2__menu_menu_component__["a" /* MenuComponent */] },
-    { path: 'kurs/add', component: __WEBPACK_IMPORTED_MODULE_4__kurse_add_kurs_add_kurs_component__["a" /* AddKursComponent */] },
-    { path: 'kurs/:kursID', component: __WEBPACK_IMPORTED_MODULE_3__kurse_kurs_detail_kurs_detail_component__["a" /* KursDetailComponent */] },
-    { path: 'user/userID', component: __WEBPACK_IMPORTED_MODULE_5__users_user_detail_user_detail_component__["a" /* UserDetailComponent */] },
-    { path: 'admin/usermenu', component: __WEBPACK_IMPORTED_MODULE_6__admin_usermenu_usermenu_component__["a" /* UsermenuComponent */] }
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */] },
+    { path: 'registration', component: __WEBPACK_IMPORTED_MODULE_7__registration_registration_component__["a" /* RegistrationComponent */] },
+    { path: 'admin/kursmenu', component: __WEBPACK_IMPORTED_MODULE_8__admin_kursmenu_kursmenu_component__["a" /* KursmenuComponent */] },
+    { path: 'kurs/add', component: __WEBPACK_IMPORTED_MODULE_3__kurse_add_kurs_add_kurs_component__["a" /* AddKursComponent */] },
+    { path: 'kurs/:kursID', component: __WEBPACK_IMPORTED_MODULE_2__kurse_kurs_detail_kurs_detail_component__["a" /* KursDetailComponent */] },
+    { path: 'user/:userID', component: __WEBPACK_IMPORTED_MODULE_4__users_user_detail_user_detail_component__["a" /* UserDetailComponent */] },
+    { path: 'admin/usermenu', component: __WEBPACK_IMPORTED_MODULE_5__admin_usermenu_usermenu_component__["a" /* UsermenuComponent */] }
 ];
 //Modul konfigurieren
 var AppRoutingModule = (function () {
@@ -476,6 +475,11 @@ var KurseService = (function () {
             .toPromise()
             .then(function (r) { return r.json(); });
     };
+    KurseService.prototype.getUserById = function (UserID) {
+        return this.http.get("api/users/" + UserID)
+            .toPromise()
+            .then(function (r) { return r.json(); });
+    };
     KurseService.prototype.saveKurs = function (kurs) {
         if (kurs.kursID) {
             return this.http.put("api/kurse/" + kurs.kursID, kurs) //backtape weil wir ein TemplateString benutzen
@@ -508,11 +512,6 @@ var KurseService = (function () {
     KurseService.prototype.getUsers = function () {
         return this.http.get('api/users')
             .toPromise() //
-            .then(function (r) { return r.json(); });
-    };
-    KurseService.prototype.getUserById = function (UserID) {
-        return this.http.get("api/users/" + UserID)
-            .toPromise()
             .then(function (r) { return r.json(); });
     };
     KurseService = __decorate([
@@ -673,7 +672,7 @@ var KursDetailComponent = (function () {
     };
     KursDetailComponent.prototype.save = function () {
         var _this = this;
-        this.kurseService.saveKurs(this.kurs).then(function () { return _this.router.navigate(['/']); }); //navigiert anschlie�end auf die Startseite
+        this.kurseService.saveKurs(this.kurs).then(function () { return _this.router.navigate(['/admin/kursmenu']); }); //navigiert anschlie�end auf die Startseite
     };
     KursDetailComponent.prototype.delete = function () {
         var _this = this;
@@ -727,7 +726,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".example-form {\r\n    min-width: 150px;\r\n    max-width: 400px;\r\n    width: 100%;\r\n    color: black !important;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.loginArea {\r\n    position: fixed;\r\n    bottom: 400px;\r\n    right: 875px;\r\n    border: 20px solid beige;\r\n    background-color: beige;\r\n}", ""]);
+exports.push([module.i, ".example-form {\r\n    min-width: 150px;\r\n    max-width: 400px;\r\n    width: 100%;\r\n    color: black !important;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.loginArea {\r\n    position: fixed;\r\n    bottom: 400px;\r\n    right: 875px;\r\n    border: 20px solid darkgray;\r\n    background-color: darkgray;\r\n}", ""]);
 
 // exports
 
@@ -740,7 +739,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"loginArea\">\r\n    <h2>Login</h2>\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n                <input matInput placeholder=\"Email\" [formControl]=\"emailFormControl\">\r\n                <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n                    Please enter a valid email address\r\n                </mat-error>\r\n                <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n                    Email is <strong>required</strong>\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br /> <br />\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n                <input matInput #passwort maxlength=\"20\" placeholder=\"Passwort\">\r\n                <mat-hint align=\"start\"><strong>Don't disclose personal info</strong> </mat-hint>\r\n                <mat-hint align=\"end\">{{passwort.value.length}} / 20</mat-hint>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br />\r\n    <div class=\"login-actions\">\r\n        <button mat-button (click)=\"goOn()\">Login</button>\r\n        <a mat-button routerLink=\"../registration\">Registrieren</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--\r\n    <div>\r\n    <h2>Login</h2>\r\n    <form name=\"form\" ng-submit=\"vm.login()\" role=\"form\">\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.username.$dirty && form.username.$error.required }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" name=\"username\" id=\"username\" class=\"form-control\" ng-model=\"vm.username\" required />\r\n            <span ng-show=\"form.username.$dirty && form.username.$error.required\" class=\"help-block\">Username is required</span>\r\n        </div>\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" ng-model=\"vm.password\" required />\r\n            <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"help-block\">Password is required</span>\r\n        </div>\r\n        <div class=\"form-actions\">\r\n            <button type=\"submit\" ng-disabled=\"form.$invalid || vm.dataLoading\" class=\"btn btn-primary\">Login</button>\r\n            <img ng-if=\"vm.dataLoading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a href=\"#!/register\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n    </form>\r\n</div>\r\n-->"
+module.exports = "<div class=\"loginArea\">\r\n    <h2>Login</h2>\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n                <input matInput placeholder=\"Email\" [(ngModel)]=\"user.email\" maxlength=\"30\" name=\"user.email\" />\r\n                <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n                    Please enter a valid email address\r\n                </mat-error>\r\n                <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n                    Email is <strong>required</strong>\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br /> <br />\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n               <input matInput placeholder=\"passwort\" [(ngModel)]=\"user.passwort\" maxlength=\"20\" name=\"user.passwort\" />\r\n                <mat-hint align=\"start\"><strong>Don't disclose personal info</strong> </mat-hint>\r\n                <mat-hint align=\"end\">{{user.passwort.length}} / 20</mat-hint>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br />\r\n    <div class=\"login-actions\">\r\n        <button mat-button (click)=\"login(user.passwort, user.email)\">Login</button>\r\n        <a mat-button routerLink=\"../registration\">Registrieren</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--\r\n    <div>\r\n    <h2>Login</h2>\r\n    <form name=\"form\" ng-submit=\"vm.login()\" role=\"form\">\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.username.$dirty && form.username.$error.required }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" name=\"username\" id=\"username\" class=\"form-control\" ng-model=\"vm.username\" required />\r\n            <span ng-show=\"form.username.$dirty && form.username.$error.required\" class=\"help-block\">Username is required</span>\r\n        </div>\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" ng-model=\"vm.password\" required />\r\n            <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"help-block\">Password is required</span>\r\n        </div>\r\n        <div class=\"form-actions\">\r\n            <button type=\"submit\" ng-disabled=\"form.$invalid || vm.dataLoading\" class=\"btn btn-primary\">Login</button>\r\n            <img ng-if=\"vm.dataLoading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a href=\"#!/register\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n    </form>\r\n</div>\r\n-->"
 
 /***/ }),
 
@@ -767,9 +766,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginComponent = (function () {
-    function LoginComponent(kurseService, router) {
+    function LoginComponent(kurseService, router, route) {
         this.kurseService = kurseService;
         this.router = router;
+        this.route = route;
         this.emailFormControl = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* Validators */].required,
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* Validators */].email,
@@ -777,10 +777,23 @@ var LoginComponent = (function () {
     }
     LoginComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.kurseService.getUsers().then(function (users) { return _this.users = users; });
+        // this.kurseService.getUsers().then(users => this.users = users);
+        this.route.paramMap
+            .switchMap(function (params) { return _this.kurseService.getUserById(+params.get('userID')); })
+            .subscribe(function (user) { return _this.user = user; });
     };
     LoginComponent.prototype.goOn = function () {
         this.router.navigate(['/admin/kursmenu']);
+    };
+    LoginComponent.prototype.login = function (passwort, email) {
+        if (this.user.email == email) {
+            if (this.user.passwort == passwort) {
+                this.router.navigate(['admin/kursmenu']);
+            }
+        }
+        else {
+            this.router.navigate(['/']);
+        }
     };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -789,7 +802,9 @@ var LoginComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/login/login.component.css")],
             providers: [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__kurse_service__["a" /* KurseService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -806,7 +821,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: hotpink;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n", ""]);
+exports.push([module.i, ".mat-line {\r\n    color: black;\r\n}\r\n\r\n.mat-divider {\r\n    border-color: black;\r\n}\r\n\r\n.add-button {\r\n    position: fixed;\r\n    bottom: 20px;\r\n    right: 20px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -902,7 +917,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/registration/registration.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"example-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Vorname\" [(ngModel)]=\"user.vorname\" maxlength=\"30\" name=\"vorname\" />\r\n        <mat-hint align=\"end\">{{user.vorname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Nachname\" [(ngModel)]=\"user.nachname\" maxlength=\"30\" name=\"nachname\" />\r\n        <mat-hint align=\"end\">{{user.nachname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Email\" [(ngModel)]=\"user.email\" maxlength=\"30\" name=\"email\" />\r\n        <mat-hint align=\"end\">{{user.email.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Password\" [(ngModel)]=\"user.password\" maxlength=\"30\" name=\"passwort\" />\r\n        <mat-hint align=\"end\">{{user.passwort.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <br />\r\n    <button mat-button (click)=\"save()\">registrieren</button>\r\n</form>\r\n\r\n\r\n\r\n\r\n\r\n<!--<div class=\"registration\">\r\n    <h2>Registrieren</h2>\r\n    <div>\r\n        <label for=\"vorname\">Vorname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.vorname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Nachname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.nachname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Email: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.email\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Passwort: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.passwort\" />\r\n    </div>\r\n    <div class=\"register-actions\">\r\n        <button (click)=\"goOn()\">Registrieren</button>\r\n    </div>\r\n</div>\r\n\r\n    -->"
+module.exports = "<form class=\"example-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Vorname\" [formControl]=\"vornameFormControl\" [(ngModel)]=\"user.vorname\" maxlength=\"30\" name=\"vorname\" />\r\n        <mat-error *ngIf=\"vornameFormControl.hasError('required')\">\r\n            Vorname is <strong>required</strong>\r\n        </mat-error>\r\n        <mat-hint align=\"end\">{{user.vorname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Nachname\" [formControl]=\"nachnameFormControl\" [(ngModel)]=\"user.nachname\" maxlength=\"30\" name=\"nachname\" />\r\n        <mat-error *ngIf=\"nachnameFormControl.hasError('required')\">\r\n            Nachname is <strong>required</strong>\r\n        </mat-error>\r\n        <mat-hint align=\"end\">{{user.nachname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Email\" [formControl]=\"emailFormControl\" [(ngModel)]=\"user.email\" maxlength=\"30\" name=\"email\" />\r\n        <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n            Email is <strong>required</strong>\r\n        </mat-error>\r\n        <mat-hint align=\"end\">{{user.email.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Password\" [formControl]=\"passwordFormControl\" [(ngModel)]=\"user.password\" maxlength=\"30\" name=\"passwort\" />\r\n        <mat-error *ngIf=\"passwordFormControl.hasError('required')\">\r\n            Password is <strong>required</strong>\r\n        </mat-error>\r\n        <mat-hint align=\"end\">{{user.passwort.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <br />\r\n    <button mat-button (click)=\"save()\">registrieren</button>\r\n</form>\r\n\r\n<!--<div class=\"registration\">\r\n    <h2>Registrieren</h2>\r\n    <div>\r\n        <label for=\"vorname\">Vorname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.vorname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Nachname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.nachname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Email: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.email\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Passwort: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.passwort\" />\r\n    </div>\r\n    <div class=\"register-actions\">\r\n        <button (click)=\"goOn()\">Registrieren</button>\r\n    </div>\r\n</div>\r\n\r\n    -->\r\n"
 
 /***/ }),
 
@@ -915,6 +930,7 @@ module.exports = "<form class=\"example-form\">\r\n    <mat-form-field class=\"f
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__users_user__ = __webpack_require__("../../../../../src/app/users/user.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -928,12 +944,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var RegistrationComponent = (function () {
     function RegistrationComponent(kurseService, router) {
         this.kurseService = kurseService;
         this.router = router;
         //KurseService injizieren
         this.user = new __WEBPACK_IMPORTED_MODULE_3__users_user__["a" /* User */]();
+        this.vornameFormControl = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["j" /* Validators */].required,
+        ]);
+        this.nachnameFormControl = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["j" /* Validators */].required,
+        ]);
+        this.emailFormControl = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["j" /* Validators */].required,
+        ]);
+        this.passwordFormControl = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["j" /* Validators */].required,
+        ]);
     }
     RegistrationComponent.prototype.ngOnInit = function () {
         null;

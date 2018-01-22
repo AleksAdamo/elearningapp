@@ -33,7 +33,7 @@ export class KursDetailComponent implements OnInit {
     }
 
     save(): void {
-        this.kurseService.saveKurs(this.kurs).then(() => this.router.navigate(['/'])); //navigiert anschließend auf die Startseite
+        this.kurseService.saveKurs(this.kurs).then(() => this.router.navigate(['/admin/kursmenu'])); //navigiert anschließend auf die Startseite
     }
 
     delete(): void {
