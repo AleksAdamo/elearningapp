@@ -20,6 +20,9 @@ namespace eLearnapp.Models
         [MaxLength(60)]
         public string Name { get; set; }
 
+        [MaxLength(250)]
+        public string Beschreibung { get; set; }
+
         //Fremdschlüssel
         public int KategorieID { get; set; }
         //Verweisobjekt

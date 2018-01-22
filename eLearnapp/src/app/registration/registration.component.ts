@@ -15,12 +15,17 @@ import { FormControl, Validators } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
 
     //KurseService injizieren
-    private users: User[];
+    private user = new User();
     constructor(private kurseService: KurseService, private router: Router) {
 
     }
 
     ngOnInit(): void {
-        throw new Error("Method not implemented.");
+        null;
     }
+
+    save(): void {
+        this.kurseService.saveUser(this.user).then(() => this.router.navigate(['/']));
+    }
+
 }

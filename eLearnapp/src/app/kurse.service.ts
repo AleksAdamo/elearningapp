@@ -42,6 +42,19 @@ export class KurseService {
         }
     }
 
+    saveUser(user: User): Promise<User> {
+        if (user.userID) {
+            return this.http.put(`api/users/${user.userID}`, user)
+                .toPromise()
+                .then(r => r.json() as User);
+        }
+        else {
+            return this.http.post('api/users', user)
+                .toPromise()
+                .then(r => r.json() as User);
+        }
+    }
+
     deleteKurs(kursID: number): Promise<void> {
         return this.http.delete(`api/kurse/${kursID}`)
             .toPromise()
@@ -60,16 +73,4 @@ export class KurseService {
             .then(r => r.json() as User);
     }
 
-    saveUser(user: User): Promise<User> {
-        if (user.userID) {
-            return this.http.put(`api/users/${user.userID}`, user)
-                .toPromise()
-                .then(r => r.json() as User);
-        }
-        else {
-            return this.http.post('api/users', user)
-                .toPromise()
-                .then(r => r.json() as User);
-        }
     }
-}

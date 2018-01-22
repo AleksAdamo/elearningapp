@@ -488,6 +488,18 @@ var KurseService = (function () {
                 .then(function (r) { return r.json(); }); //Antwort verarbeiten: Json des Bodys parsen und in Kurs casten
         }
     };
+    KurseService.prototype.saveUser = function (user) {
+        if (user.userID) {
+            return this.http.put("api/users/" + user.userID, user)
+                .toPromise()
+                .then(function (r) { return r.json(); });
+        }
+        else {
+            return this.http.post('api/users', user)
+                .toPromise()
+                .then(function (r) { return r.json(); });
+        }
+    };
     KurseService.prototype.deleteKurs = function (kursID) {
         return this.http.delete("api/kurse/" + kursID)
             .toPromise()
@@ -502,18 +514,6 @@ var KurseService = (function () {
         return this.http.get("api/users/" + UserID)
             .toPromise()
             .then(function (r) { return r.json(); });
-    };
-    KurseService.prototype.saveUser = function (user) {
-        if (user.userID) {
-            return this.http.put("api/users/" + user.userID, user)
-                .toPromise()
-                .then(function (r) { return r.json(); });
-        }
-        else {
-            return this.http.post('api/users', user)
-                .toPromise()
-                .then(function (r) { return r.json(); });
-        }
     };
     KurseService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])() //damit wir die klasse injizieren können
@@ -548,7 +548,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/add-kurs/add-kurs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<form *ngIf=\"kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"end\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorieID\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<form *ngIf=\"kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"end\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorieID\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n    </div>\r\n</form>"
 
 /***/ }),
 
@@ -627,7 +627,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/kurs-detail/kurs-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <!--<mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field> -->\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n        <button mat-button (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n        <mat-select class=\"full-widht select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n        <button mat-button (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
 
 /***/ }),
 
@@ -710,6 +710,7 @@ var KursDetailComponent = (function () {
 var Kurs = (function () {
     function Kurs() {
         this.name = "";
+        this.beschreibung = "";
     }
     return Kurs;
 }());
@@ -901,7 +902,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/registration/registration.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"example-form\">\r\n    <table class=\"example-full-width\" cellspacing=\"0\">\r\n        <tr>\r\n            <td>\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput #Vorname maxlength=\"30\" placeholder=\"Vorname\" value=\"Justin\">\r\n                    <mat-hint align=\"end\">{{vorname.value.length}} / 30</mat-hint>\r\n                </mat-form-field>\r\n            </td>\r\n            <td>\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput #Nachname maxlength=\"30\" placeholder=\"Nachname\" value=\"Bieber\">\r\n                    <mat-hint align=\"end\">{{nachname.value.length}} / 30</mat-hint>\r\n                </mat-form-field>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n\r\n    <p>\r\n        <mat-form-field class=\"example-full-width\">\r\n            <textarea matInput placeholder=\"Email\">kidrauhl@gmail.com</textarea>\r\n        </mat-form-field>\r\n    </p>\r\n\r\n    <table class=\"example-full-width\" cellspacing=\"0\">\r\n        <tr>\r\n            <td>\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput #Passwort maxlength=\"20\" placeholder=\"Passwort\" value=\"123456\">\r\n                    <mat-hint align=\"end\">{{passwort.value.length}} / 20</mat-hint>\r\n                </mat-form-field>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n    <br />\r\n    <button mat-button (click)=\"registrate()\">registrieren</button>\r\n</form>\r\n\r\n\r\n\r\n\r\n\r\n<!--<div class=\"registration\">\r\n    <h2>Registrieren</h2>\r\n    <div>\r\n        <label for=\"vorname\">Vorname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.vorname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Nachname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.nachname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Email: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.email\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Passwort: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.passwort\" />\r\n    </div>\r\n    <div class=\"register-actions\">\r\n        <button (click)=\"goOn()\">Registrieren</button>\r\n    </div>\r\n</div>\r\n\r\n    -->"
+module.exports = "<form class=\"example-form\">\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Vorname\" [(ngModel)]=\"user.vorname\" maxlength=\"30\" name=\"vorname\" />\r\n        <mat-hint align=\"end\">{{user.vorname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Nachname\" [(ngModel)]=\"user.nachname\" maxlength=\"30\" name=\"nachname\" />\r\n        <mat-hint align=\"end\">{{user.nachname.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Email\" [(ngModel)]=\"user.email\" maxlength=\"30\" name=\"email\" />\r\n        <mat-hint align=\"end\">{{user.email.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-widht\">\r\n        <input matInput placeholder=\"Password\" [(ngModel)]=\"user.password\" maxlength=\"30\" name=\"passwort\" />\r\n        <mat-hint align=\"end\">{{user.passwort.length}} / 30</mat-hint>\r\n    </mat-form-field>\r\n    <br />\r\n    <button mat-button (click)=\"save()\">registrieren</button>\r\n</form>\r\n\r\n\r\n\r\n\r\n\r\n<!--<div class=\"registration\">\r\n    <h2>Registrieren</h2>\r\n    <div>\r\n        <label for=\"vorname\">Vorname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.vorname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Nachname: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.nachname\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Email: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.email\" />\r\n    </div>\r\n    <div>\r\n        <label for=\"vorname\">Passwort: </label>\r\n        <br />\r\n        <input type=\"text\" name=\"vorname\" class=\"register-form\" ng-model=\"user.passwort\" />\r\n    </div>\r\n    <div class=\"register-actions\">\r\n        <button (click)=\"goOn()\">Registrieren</button>\r\n    </div>\r\n</div>\r\n\r\n    -->"
 
 /***/ }),
 
@@ -913,6 +914,7 @@ module.exports = "<form class=\"example-form\">\r\n    <table class=\"example-fu
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__kurse_service__ = __webpack_require__("../../../../../src/app/kurse.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__users_user__ = __webpack_require__("../../../../../src/app/users/user.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -925,13 +927,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  //OnInit = Lebenszyklus event
 
 
+
 var RegistrationComponent = (function () {
     function RegistrationComponent(kurseService, router) {
         this.kurseService = kurseService;
         this.router = router;
+        //KurseService injizieren
+        this.user = new __WEBPACK_IMPORTED_MODULE_3__users_user__["a" /* User */]();
     }
     RegistrationComponent.prototype.ngOnInit = function () {
-        throw new Error("Method not implemented.");
+        null;
+    };
+    RegistrationComponent.prototype.save = function () {
+        var _this = this;
+        this.kurseService.saveUser(this.user).then(function () { return _this.router.navigate(['/']); });
     };
     RegistrationComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -1024,6 +1033,25 @@ var UserDetailComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_3__kurse_service__["a" /* KurseService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], UserDetailComponent);
     return UserDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/user.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+var User = (function () {
+    function User() {
+        this.email = "";
+        this.vorname = "";
+        this.nachname = "";
+        this.passwort = "";
+    }
+    return User;
 }());
 
 

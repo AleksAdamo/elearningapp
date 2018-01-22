@@ -18,7 +18,7 @@ const routes: Routes = [
     { path: 'admin/kursmenu', component: MenuComponent },
     { path: 'kurs/add', component: AddKursComponent }, //neue komponente in der app.module.ts importieren
     { path: 'kurs/:kursID', component: KursDetailComponent },
-    { path: 'user/userID', component: UserDetailComponent },
+    { path: 'user/:userID', component: UserDetailComponent },
     { path: 'admin/usermenu', component: UsermenuComponent }
 ]
 
