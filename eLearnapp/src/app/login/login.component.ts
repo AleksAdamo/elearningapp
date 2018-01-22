@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
             console.log(this.users[i].passwort);
             if (this.users[i].passwort == passwort && this.users[i].email == email) {
                 valid = true;
-
+                //TODO set session user 
+                //write current id to database ( this,users[i].id) table currentUser
             }
 
         }
