@@ -1,39 +1,22 @@
 ﻿<form class="example-form">
-    <table class="example-full-width" cellspacing="0">
-        <tr>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <input matInput #Vorname maxlength="30" placeholder="Vorname" value="Justin">
-                    <mat-hint align="end">{{vorname.value.length}} / 30</mat-hint>
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <input matInput #Nachname maxlength="30" placeholder="Nachname" value="Bieber">
-                    <mat-hint align="end">{{nachname.value.length}} / 30</mat-hint>
-                </mat-form-field>
-            </td>
-        </tr>
-    </table>
-
-    <p>
-        <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="Email">kidrauhl@gmail.com</textarea>
-        </mat-form-field>
-    </p>
-
-    <table class="example-full-width" cellspacing="0">
-        <tr>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <input matInput #Passwort maxlength="20" placeholder="Passwort" value="123456">
-                    <mat-hint align="end">{{passwort.value.length}} / 20</mat-hint>
-                </mat-form-field>
-            </td>
-        </tr>
-    </table>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="Vorname" [(ngModel)]="user.vorname" maxlength="30" name="vorname" />
+        <mat-hint align="end">{{user.vorname.length}} / 30</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="Nachname" [(ngModel)]="user.nachname" maxlength="30" name="nachname" />
+        <mat-hint align="end">{{user.nachname.length}} / 30</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="Email" [(ngModel)]="user.email" maxlength="30" name="email" />
+        <mat-hint align="end">{{user.email.length}} / 30</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-widht">
+        <input matInput placeholder="Password" [(ngModel)]="user.password" maxlength="30" name="passwort" />
+        <mat-hint align="end">{{user.passwort.length}} / 30</mat-hint>
+    </mat-form-field>
     <br />
-    <button mat-button (click)="registrate()">registrieren</button>
+    <button mat-button (click)="save()">registrieren</button>
 </form>
 
 

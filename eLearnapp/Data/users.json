@@ -12,7 +12,8 @@
     "Email": "user2@beispiel.com",
     "Vorname": "Naruto",
     "Nachname": "Uzomaki",
-    "Passwort": "123456"
+    "Passwort": "123456",
+    "Usertyp": 1
   },
 
   {
@@ -28,7 +29,8 @@
     "Email": "user4@beispiel.com",
     "Vorname": "Ilija",
     "Nachname": "alu Lazar",
-    "Passwort": "123456"
+    "Passwort": "123456",
+    "Usertyp": 1
   },
 
   {

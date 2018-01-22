@@ -49,6 +49,7 @@ namespace eLearnapp.Repositories
             var kursToUpdate = _db.Kurse.Find(kurs.KursID);
 
             kursToUpdate.Name = kurs.Name;
+            kursToUpdate.Beschreibung = kurs.Beschreibung;
             kursToUpdate.KategorieID = kurs.KategorieID;
 
             _db.SaveChanges();
