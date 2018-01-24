@@ -30,6 +30,7 @@ export class KursDetailComponent implements OnInit {
         this.route.paramMap
             .switchMap((params: ParamMap) => this.kurseService.getKurs(+params.get('kursID')))
             .subscribe(kurs => this.kurs = kurs); //den Kurs den ich zurückbekommen habe auf den aktuellen Kurs setzen
+       
     }
 
     save(): void {

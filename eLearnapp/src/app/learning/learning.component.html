@@ -1,0 +1,19 @@
+﻿<h2 >{{kurs.name}}</h2>
+<h3>Klicke auf die Frage, wenn du glaubst, dass du die Antwort kennst</h3>
+<br />
+
+    <mat-list >
+        <!--<ng-container *ngFor="let abfrage of kurs.abfragenID">-->
+        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->
+        <br />
+        <mat-list-item *ngFor="let abfrage of abfragen">
+            <div mat-line>
+                <div fxLayout="row">
+                    <div fxFlex="80"><font color="#000000">{{abfrage.frage}}</font></div>
+                    <div fxFlex="20"><button mat-raised-button (click)="showAnswer(abfrage)">Antwort anzeigen</button></div>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <!--</ng-container>-->
+    </mat-list>

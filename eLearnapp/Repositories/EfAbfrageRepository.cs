@@ -38,9 +38,12 @@ namespace eLearnapp.Repositories
             return _db.Abfragen.Find(Id);
         }
 
-        public IEnumerable<Abfrage> GetAbfragen()
+        public IEnumerable<Abfrage> GetAbfragen(int Id)
         {
-            return _db.Abfragen;
+           var query = (from p in _db.Abfragen
+                                     where p.KursID == Id                                    
+                                     select p).ToList();
+            return query;
         }
 
         public Abfrage UpdateAbfrage(Abfrage abfrage)

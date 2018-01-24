@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { Kategorie } from "./Kategorien/kategorie";
 import { Kurs } from './kurse/kurs';
 import { User } from './users/user';
+import { Abfrage } from './abfragen/abfrage';
 
 //Aufgabe: Komplette Kommunikation zur API (Backend) kapseln
 @Injectable() //damit wir die klasse injizieren können
@@ -21,6 +22,12 @@ export class KurseService {
         return this.http.get('api/kategorien')
             .toPromise() //ich ruf was ab, dann ist fertig und da und kann nicht geändert werden
             .then(r => r.json() as Kategorie[]);
+    }
+
+    getAbfragen(kursID:number): Promise<Abfrage[]> {
+        return this.http.get(`api/abfragen/${kursID}`)
+            .toPromise() //ich ruf was ab, dann ist fertig und da und kann nicht geändert werden
+            .then(r => r.json() as Abfrage[]);
     }
 
     getKurs(kursID: number): Promise<Kurs> {

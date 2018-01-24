@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin/kursmenu/kursmenu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Kursübersicht</h2>\r\n<br />\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\">\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <br />\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">assignment_turned_in</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
+module.exports = "<h2>Kursübersicht</h2>\r\n<br />\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\">\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <br />\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><button mat-raised-button (click)=\"startKurs(kurs)\">start</button></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
 
 /***/ }),
 
@@ -81,6 +81,9 @@ var KursmenuComponent = (function () {
     };
     KursmenuComponent.prototype.addUser = function () {
         this.router.navigate(['/user/add']);
+    };
+    KursmenuComponent.prototype.startKurs = function (kurs) {
+        this.router.navigate(['/learning', kurs.kursID]);
     };
     KursmenuComponent = __decorate([
         core_1.Component({
@@ -173,6 +176,48 @@ exports.UsermenuComponent = UsermenuComponent;
 
 /***/ }),
 
+/***/ "../../../../../src/app/answer-dialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 mat-dialog-title>Antwort</h2>\r\n<mat-dialog-content>{{test}}</mat-dialog-content>\r\n<mat-dialog-actions>\r\n</mat-dialog-actions>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/answer-dialog.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var material_1 = __webpack_require__("../../../material/esm5/material.es5.js");
+var AnswerDialogComponent = (function () {
+    function AnswerDialogComponent(dialogRef) {
+        this.dialogRef = dialogRef;
+    }
+    AnswerDialogComponent = __decorate([
+        core_1.Component({
+            selector: 'answer-dialog',
+            template: __webpack_require__("../../../../../src/app/answer-dialog.component.html")
+        }),
+        __metadata("design:paramtypes", [material_1.MatDialogRef])
+    ], AnswerDialogComponent);
+    return AnswerDialogComponent;
+}());
+exports.AnswerDialogComponent = AnswerDialogComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/app-routing.module.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -194,6 +239,7 @@ var usermenu_component_1 = __webpack_require__("../../../../../src/app/admin/use
 var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
 var registration_component_1 = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 var kursmenu_component_1 = __webpack_require__("../../../../../src/app/admin/kursmenu/kursmenu.component.ts");
+var learning_component_1 = __webpack_require__("../../../../../src/app/learning/learning.component.ts");
 //routen definieren
 var routes = [
     //Zu jeder Route die ich routen möchte vergebe ich einen Pfad und eine Komponente
@@ -204,6 +250,7 @@ var routes = [
     { path: 'kurs/add', component: add_kurs_component_1.AddKursComponent },
     { path: 'kurs/:kursID', component: kurs_detail_component_1.KursDetailComponent },
     { path: 'user/:userID', component: user_detail_component_1.UserDetailComponent },
+    { path: 'learning/:kursID', component: learning_component_1.LearningComponent },
     { path: 'admin/usermenu', component: usermenu_component_1.UsermenuComponent }
 ];
 //Modul konfigurieren
@@ -306,12 +353,14 @@ var kurs_detail_component_1 = __webpack_require__("../../../../../src/app/kurse/
 var app_routing_module_1 = __webpack_require__("../../../../../src/app/app-routing.module.ts"); //Das Modul wird hier referenziert
 var kurse_service_1 = __webpack_require__("../../../../../src/app/kurse.service.ts");
 var delete_dialog_component_1 = __webpack_require__("../../../../../src/app/delete-dialog.component.ts");
+var answer_dialog_component_1 = __webpack_require__("../../../../../src/app/answer-dialog.component.ts");
 var add_kurs_component_1 = __webpack_require__("../../../../../src/app/kurse/add-kurs/add-kurs.component.ts");
 var user_detail_component_1 = __webpack_require__("../../../../../src/app/users/user-detail/user-detail.component.ts");
 var usermenu_component_1 = __webpack_require__("../../../../../src/app/admin/usermenu/usermenu.component.ts");
 var kursmenu_component_1 = __webpack_require__("../../../../../src/app/admin/kursmenu/kursmenu.component.ts");
 var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
 var registration_component_1 = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
+var learning_component_1 = __webpack_require__("../../../../../src/app/learning/learning.component.ts");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -322,14 +371,16 @@ var AppModule = (function () {
                 menu_component_1.MenuComponent,
                 kurs_detail_component_1.KursDetailComponent,
                 delete_dialog_component_1.DeleteDialogComponent,
+                answer_dialog_component_1.AnswerDialogComponent,
                 add_kurs_component_1.AddKursComponent,
                 user_detail_component_1.UserDetailComponent,
                 usermenu_component_1.UsermenuComponent,
                 kursmenu_component_1.KursmenuComponent,
                 login_component_1.LoginComponent,
-                registration_component_1.RegistrationComponent
+                registration_component_1.RegistrationComponent,
+                learning_component_1.LearningComponent
             ],
-            entryComponents: [delete_dialog_component_1.DeleteDialogComponent],
+            entryComponents: [delete_dialog_component_1.DeleteDialogComponent, answer_dialog_component_1.AnswerDialogComponent],
             imports: [
                 platform_browser_1.BrowserModule,
                 animations_1.BrowserAnimationsModule,
@@ -430,6 +481,11 @@ var KurseService = (function () {
     }
     KurseService.prototype.getKategorien = function () {
         return this.http.get('api/kategorien')
+            .toPromise() //ich ruf was ab, dann ist fertig und da und kann nicht geändert werden
+            .then(function (r) { return r.json(); });
+    };
+    KurseService.prototype.getAbfragen = function (kursID) {
+        return this.http.get("api/abfragen/" + kursID)
             .toPromise() //ich ruf was ab, dann ist fertig und da und kann nicht geändert werden
             .then(function (r) { return r.json(); });
     };
@@ -673,6 +729,106 @@ exports.Kurs = Kurs;
 
 /***/ }),
 
+/***/ "../../../../../src/app/learning/learning.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/learning/learning.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 >{{kurs.name}}</h2>\r\n<h3>Klicke auf die Frage, wenn du glaubst, dass du die Antwort kennst</h3>\r\n<br />\r\n\r\n    <mat-list >\r\n        <!--<ng-container *ngFor=\"let abfrage of kurs.abfragenID\">-->\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <br />\r\n        <mat-list-item *ngFor=\"let abfrage of abfragen\">\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\"><font color=\"#000000\">{{abfrage.frage}}</font></div>\r\n                    <div fxFlex=\"20\"><button mat-raised-button (click)=\"showAnswer(abfrage)\">Antwort anzeigen</button></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n        <!--</ng-container>-->\r\n    </mat-list>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/learning/learning.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var material_1 = __webpack_require__("../../../material/esm5/material.es5.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js"); //um die in der URL übergebene ID abzurufen
+__webpack_require__("../../../../rxjs/_esm5/add/operator/switchMap.js");
+var kurse_service_1 = __webpack_require__("../../../../../src/app/kurse.service.ts");
+var delete_dialog_component_1 = __webpack_require__("../../../../../src/app/delete-dialog.component.ts");
+var answer_dialog_component_1 = __webpack_require__("../../../../../src/app/answer-dialog.component.ts");
+var LearningComponent = (function () {
+    function LearningComponent(route, kurseService, router, dialog) {
+        this.route = route;
+        this.kurseService = kurseService;
+        this.router = router;
+        this.dialog = dialog;
+        this.abfragen = new Array();
+    }
+    LearningComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.paramMap
+            .switchMap(function (params) { return _this.kurseService.getKurs(+params.get('kursID')); })
+            .subscribe(function (kurs) { return _this.kurs = kurs; });
+        this.route.paramMap
+            .switchMap(function (params) { return _this.kurseService.getAbfragen(+params.get('kursID')); })
+            .subscribe(function (abfragen) { return _this.abfragen = abfragen; }); //den Kurs den ich zurückbekommen habe auf den aktuellen Kurs setzen
+        //this.kurseService.getKurs(+1).then(kurs => this.kurs = kurs);
+        //  this.abfragen = this.kurs.abfragen;
+        // console.log(this.kurs.abfragen.length);
+    };
+    LearningComponent.prototype.showAnswer = function (abfrage) {
+        var dialogRef = this.dialog.open(answer_dialog_component_1.AnswerDialogComponent);
+        dialogRef.componentInstance.test = abfrage.antwort;
+        console.log(abfrage.antwort);
+    };
+    LearningComponent.prototype.delete = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(delete_dialog_component_1.DeleteDialogComponent);
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                _this.kurseService.deleteKurs(_this.kurs.kursID).then(function () { return _this.router.navigate(['/']); });
+            }
+        });
+    };
+    LearningComponent = __decorate([
+        core_1.Component({
+            selector: 'app-learning',
+            template: __webpack_require__("../../../../../src/app/learning/learning.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/learning/learning.component.css")],
+            providers: [kurse_service_1.KurseService]
+        }),
+        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+            kurse_service_1.KurseService,
+            router_1.Router,
+            material_1.MatDialog])
+    ], LearningComponent);
+    return LearningComponent;
+}());
+exports.LearningComponent = LearningComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -799,7 +955,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Kursübersicht</h2>\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\"> <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><i class=\"material-icons\">assignment_turned_in</i></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
+module.exports = "<h2>Kursübersicht</h2>\r\n<br />\r\n<mat-spinner *ngIf=\"!kategorien\"></mat-spinner>\r\n<mat-list *ngIf=\"kategorien\">\r\n    <ng-container *ngFor=\"let kategorie of kategorien\">\r\n        <!--Ngcontainer = etwas wiederholen ohne äußeres element-->\r\n        <h3 my-subheader>\r\n            {{kategorie.name}}\r\n        </h3>\r\n        <br />\r\n        <mat-list-item *ngFor=\"let kurs of kategorie.kurse\">\r\n            <h4 mat-line (click)=\"goToKurs(kurs)\">{{kurs.kursID}} - {{kurs.name}}</h4>\r\n            <div mat-line>\r\n                <div fxLayout=\"row\">\r\n                    <div fxFlex=\"80\">{{kurs.beschreibung}}</div>\r\n                    <div fxFlex=\"20\"><button mat-raised-button (click)=\"startKurs(kurs)\">start</button></div>\r\n                </div>\r\n            </div>\r\n        </mat-list-item>\r\n        <mat-divider></mat-divider>\r\n    </ng-container>\r\n</mat-list>\r\n<span class=\"add-button\">\r\n    <button mat-mini-fab (click)=\"addKurs()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</span>"
 
 /***/ }),
 

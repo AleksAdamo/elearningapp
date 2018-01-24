@@ -18,13 +18,14 @@ import { KursDetailComponent } from './kurse/kurs-detail/kurs-detail.component';
 import { AppRoutingModule } from './app-routing.module'; //Das Modul wird hier referenziert
 import { KurseService } from './kurse.service';
 import { DeleteDialogComponent } from './delete-dialog.component';
+import { AnswerDialogComponent } from './answer-dialog.component';
 import { AddKursComponent } from './kurse/add-kurs/add-kurs.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UsermenuComponent } from './admin/usermenu/usermenu.component';
 import { KursmenuComponent } from './admin/kursmenu/kursmenu.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-
+import { LearningComponent } from './learning/learning.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +33,16 @@ import { RegistrationComponent } from './registration/registration.component';
       MenuComponent,
       KursDetailComponent,
       DeleteDialogComponent,
+      AnswerDialogComponent,
       AddKursComponent,
       UserDetailComponent,
       UsermenuComponent,
       KursmenuComponent,
       LoginComponent,
-      RegistrationComponent
-  ],
-  entryComponents: [DeleteDialogComponent],
+      RegistrationComponent,
+      LearningComponent
+    ],
+    entryComponents: [DeleteDialogComponent, AnswerDialogComponent],
   imports: [
       BrowserModule,
       BrowserAnimationsModule,

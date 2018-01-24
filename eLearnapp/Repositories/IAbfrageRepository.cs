@@ -8,7 +8,7 @@ namespace eLearnapp.Repositories
 {
     public interface IAbfrageRepository
     {
-        IEnumerable<Abfrage> GetAbfragen();
+        IEnumerable<Abfrage> GetAbfragen(int Id);
         Abfrage GetAbfrageById(int Id);
         Abfrage CreateAbfrage(Abfrage abfrage);
         Abfrage UpdateAbfrage(Abfrage abfrage);

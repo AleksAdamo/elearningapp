@@ -14,17 +14,17 @@ namespace eLearnapp.Controllers
     {
         private readonly IAbfrageRepository _repository;
 
-        public AbfragenController (IAbfrageRepository repository)
+        public AbfragenController(IAbfrageRepository repository)
         {
             _repository = repository;
         }
 
-        [HttpGet]
-        public IEnumerable<Abfrage> GetAbfragen()
-        {
-            return _repository.GetAbfragen();
-        }
 
+        [HttpGet("{Id}")]
+        public IEnumerable<Abfrage> GetAbfragen(int Id)
+        {
+            return _repository.GetAbfragen(Id);
+        }
         [HttpPost]
         public IActionResult Post([FromBody] Abfrage abfrage)
         {

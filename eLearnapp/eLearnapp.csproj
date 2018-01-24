@@ -10,11 +10,13 @@
     <None Remove="src\app\abfragen\abfrage.ts" />
     <None Remove="src\app\admin\kursmenu\kursmenu.component.ts" />
     <None Remove="src\app\admin\usermenu\usermenu.component.ts" />
+    <None Remove="src\app\answer-dialog.component.ts" />
     <None Remove="src\app\app-routing.module.ts" />
     <None Remove="src\app\delete-dialog.component.ts" />
     <None Remove="src\app\kategorien\kategorie.ts" />
     <None Remove="src\app\kurse.service.ts" />
     <None Remove="src\app\kurse\kurs.ts" />
+    <None Remove="src\app\learning\learning.component.ts" />
     <None Remove="src\app\login\login.component.ts" />
     <None Remove="src\app\menu\menu.component.ts" />
     <None Remove="src\app\registration\registration.component.ts" />
@@ -41,11 +43,13 @@
     <TypeScriptCompile Include="src\app\abfragen\abfrage.ts" />
     <TypeScriptCompile Include="src\app\admin\kursmenu\kursmenu.component.ts" />
     <TypeScriptCompile Include="src\app\admin\usermenu\usermenu.component.ts" />
+    <TypeScriptCompile Include="src\app\answer-dialog.component.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\delete-dialog.component.ts" />
     <TypeScriptCompile Include="src\app\kategorien\kategorie.ts" />
     <TypeScriptCompile Include="src\app\kurse.service.ts" />
     <TypeScriptCompile Include="src\app\kurse\kurs.ts" />
+    <TypeScriptCompile Include="src\app\learning\learning.component.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\app\registration\registration.component.ts" />
     <TypeScriptCompile Include="src\app\shared\material.module.ts" />
