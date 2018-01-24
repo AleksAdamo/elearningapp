@@ -8,9 +8,8 @@ Quelle: *Helmut Balzert, Lehrbuch der Softwaretechnik: Basiskonzepte und Require
 Beschreibung der Visionen und Ziele, die durch den Einsatz des Systems erreicht werden sollen:
 
 Visionen
-- /V10/ Eine „eLearning-App“ zu entwickeln, die dem Anwender (dem Studenten) die Möglichkeit bietet jederzeit lernen zu können
-- /V20/ Eine „eLearning-App“ zu entwickeln, die darüber hinaus leicht zu bedienen ist und somit das Lernen fördern soll.
-- /V30/ Eine „eLearning-App zu entwickeln, die eine Alternative zur Prüfungsvorbereitung bietet oder zu mindestens eine (sehr) gute Ergänzung darstellt.
+- /Vision 1/ Eine „eLearning-App“ zu entwickeln, die darüber hinaus leicht zu bedienen ist und somit das Lernen fördern soll.
+- /V20/ Eine „eLearning-App zu entwickeln, die eine Alternative zur Prüfungsvorbereitung bietet oder zu mindestens eine (sehr) gute Ergänzung darstellt.
 
 Ziele
 - /Z10/ Der Anwender (Student) muss jederzeit Zugriff auf die „eLearning-App“ haben. Die Anwendung soll daher zeit- und ortunabhängig sein.
