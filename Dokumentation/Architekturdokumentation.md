@@ -37,10 +37,10 @@ gehören die
 ## Qualitätsziele
 
 - Die Webanwendung muss für die verschiedenen Benutzer (insb. Studierende und Dozenten) übersichtlich sein
-- Die Webanwendung muss performant sein (schnell sein)
+- Die Webanwendung muss performant sein (schnell sein (z.B. durch LazyLoading))
 - Die Webanwendung soll die Kontrollfragen zu verschieden Modulen und Fachbereichen enthalten können
 
-- zu 1. jede Funktion muss schnell, d.h. mit max. 7(bis zu 10) Klicks erreichbar sein
+- zu 1. jede Funktion muss schnell, d.h. mit max. 5 Klicks erreichbar sein
 - zu 2. die Webanwendung muss für mehrere Benutzer (für 50 Benutzer) gleichzeitig erreichbar sein, ohne dass es aus Sicht eines einzelnen Benutzers zu Laufzeiteinbußen kommt
 - zu 3. Nach einem Jahr müssen >90% der Module in der Webanwendung sein und diese müssen Kontrollfragen erhalten.
 
@@ -53,12 +53,12 @@ gehören die
 
 | Rolle | Kontakt | Erwartungshaltung |
 
-- | Prof. Dr. Daniel Retkowitz (Dozent) | daniel.retkowitz@hs-niederrhein.de | --- |
+- | Prof. Dr. Daniel Retkowitz (Dozent) | daniel.retkowitz@hs-niederrhein.de | Kernfunktion sollte funktioineren |
 - | Tobias Jansen (Student) | Tobias.Jansen@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
 - | Henning Schilder (Student) | Henning.Schilder@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
 - | Jari Elfers (Student) | jari.elfers@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
 - | Aleks Adamovic (Student) | Aleks.Adamovic@stud.hn.de | Erfolgreiche Umsetzung des Projektes |
-- | User (Student) | diverse | Erfolgreiche Nutzung der Anwendung |
+- | User (Student) | diverse | Erfolgreiche Nutzung der Anwendung,  |
 
 
 # 2 Randbedingungen
@@ -87,7 +87,7 @@ Namenskonvention)
 
 Technische Vorgaben
 
-- Programmiersprache: Java/TypeScript
+- Programmiersprache: c#/TypeScript/html
 - Framework: Angular
 - IDE: Visual Studio 2017
 - Zielumgebung: Plattformunabhängig (Webanwendung)
@@ -95,10 +95,10 @@ Technische Vorgaben
 
 Organisatorische Vorgaben
 
-- Zeitrahmen: Mitte Oktober 2017 bis Mitte Januar 2018 (drei Monate)
-- Team: Gruppe aus vier Studenten
+- Zeitrahmen: Mitte Dezember 2017 bis Mitte Januar 2018
+- Team: Einzelarbeit
 - Dokumentation: Pflichtenheft und Architekturdokumentation
-- Präsentation: 30 Min. bestehend aus PP-Präs. und Poster
+- Präsentation: 30 Min. bestehend aus Anwendungs-Vorstellung (Front und Backend), Visualisierung der Use-Cases
 - Versionsverwaltungssystem: GitHub, Trello (nur intern)
 
 # 3 Kontextabgrenzung
