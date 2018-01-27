@@ -26,7 +26,7 @@ export class AddKursComponent implements OnInit {
   }
 
   save(): void {
-      this.kurseService.saveKurs(this.kurs).then(() => this.router.navigate(['/']));
+      this.kurseService.saveKurs(this.kurs).then(() => this.router.navigate(['admin/kursmenu']));
   }
 
 }

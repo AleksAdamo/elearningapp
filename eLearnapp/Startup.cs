@@ -38,6 +38,12 @@ namespace eLearnapp
             //DbContect registrieren
             services.AddDbContext<KursContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //Login
+            services.AddIdentityServer() //registers the IdentityServer services in DI and an in-memory store for runtime state.
+                    .AddDeveloperSigningCredential() //creates temporary key material for signing tokens
+                    .AddInMemoryApiResources(Config.GetApiResources())
+                    .AddInMemoryClients(Config.GetClients());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +60,7 @@ namespace eLearnapp
 
             app.UseDefaultFiles(); //damit man eine Index HTML ausführen kann ohne es anzugeben
             app.UseStaticFiles(); // Damit Asp Net Core in der Lage ist statische Dateien auszuliefern
-
+            app.UseIdentityServer();
             app.UseMvc();
         }
     }
