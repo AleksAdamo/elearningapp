@@ -32,13 +32,6 @@ export class KursmenuComponent implements OnInit {
         this.router.navigate(['/kurs/add'])
     }
 
-    goToUser(user: User): void {
-        this.router.navigate(['/user', user.userID]);
-    }
-
-    addUser(): void {
-        this.router.navigate(['/user/add'])
-    }
     startKurs(kurs: Kurs): void {
         this.router.navigate(['/learning', kurs.kursID]);
     }

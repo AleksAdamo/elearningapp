@@ -1,26 +1,26 @@
 <div>
     <mat-toolbar class="toolbar-box" color="black">
-    <button mat-button class="menuTrigger" [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="admin/kursmenu" routerLinkActive="mat-button-active">
-            <mat-icon>assignment_ind</mat-icon>
-            <span>Kurs-Liste</span>
+        <button mat-button class="menuTrigger" [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
         </button>
-        <button mat-menu-item routerLink="admin/usermenu" routerLinkActive="mat-button-active">
-            <mat-icon>account_box</mat-icon>
-            <span>User-Liste</span>
-        </button>
-        <button mat-menu-item disabled>
-            <mat-icon>settings</mat-icon>
-            <span>Einstellungen</span>
-        </button>
-        <button mat-menu-item disabled>
-            <mat-icon>power_settings_new</mat-icon>
-            <span>Abmelden</span>
-        </button>
-    </mat-menu>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="admin/kursmenu" routerLinkActive="mat-button-active">
+                <mat-icon>assignment_ind</mat-icon>
+                <span>Kurs-Liste</span>
+            </button>
+            <button mat-menu-item routerLink="admin/usermenu" routerLinkActive="mat-button-active">
+                <mat-icon>account_box</mat-icon>
+                <span>User-Liste</span>
+            </button>
+            <button mat-menu-item disabled>
+                <mat-icon>settings</mat-icon>
+                <span>Einstellungen</span>
+            </button>
+            <button mat-menu-item routerLink="login" routerLinkActive="mat-button-active">
+                <mat-icon>power_settings_new</mat-icon>
+                <span>Abmelden</span>
+            </button>
+        </mat-menu>
         {{title}}
     </mat-toolbar>
 </div>

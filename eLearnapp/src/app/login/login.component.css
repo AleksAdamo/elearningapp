@@ -10,9 +10,11 @@
 }
 
 .loginArea {
-    position: fixed;
-    bottom: 400px;
-    right: 875px;
+    bottom: 200px;
+    right: 675px;
     border: 20px solid darkgray;
     background-color: darkgray;
+    max-width: 300px;
+    margin-left: 650px;
+    margin-top: 150px;
 }

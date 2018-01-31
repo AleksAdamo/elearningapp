@@ -33,7 +33,7 @@ export class LearningComponent implements OnInit {
             .subscribe(kurs => this.kurs = kurs);
         this.route.paramMap
             .switchMap((params: ParamMap) => this.kurseService.getAbfragen(+params.get('kursID')))
-            .subscribe(abfragen => this.abfragen = abfragen);//den Kurs den ich zurückbekommen habe auf den aktuellen Kurs setzen
+            .subscribe(abfragen => this.abfragen = abfragen);
         //this.kurseService.getKurs(+1).then(kurs => this.kurs = kurs);
   
       //  this.abfragen = this.kurs.abfragen;

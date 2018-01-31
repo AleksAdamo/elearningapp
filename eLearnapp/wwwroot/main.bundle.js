@@ -78,12 +78,6 @@ var KursmenuComponent = (function () {
     KursmenuComponent.prototype.addKurs = function () {
         this.router.navigate(['/kurs/add']);
     };
-    KursmenuComponent.prototype.goToUser = function (user) {
-        this.router.navigate(['/user', user.userID]);
-    };
-    KursmenuComponent.prototype.addUser = function () {
-        this.router.navigate(['/user/add']);
-    };
     KursmenuComponent.prototype.startKurs = function (kurs) {
         this.router.navigate(['/learning', kurs.kursID]);
     };
@@ -305,7 +299,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <mat-toolbar class=\"toolbar-box\" color=\"black\">\r\n    <button mat-button class=\"menuTrigger\" [matMenuTriggerFor]=\"menu\">\r\n        <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\">\r\n        <button mat-menu-item routerLink=\"admin/kursmenu\" routerLinkActive=\"mat-button-active\">\r\n            <mat-icon>assignment_ind</mat-icon>\r\n            <span>Kurs-Liste</span>\r\n        </button>\r\n        <button mat-menu-item routerLink=\"admin/usermenu\" routerLinkActive=\"mat-button-active\">\r\n            <mat-icon>account_box</mat-icon>\r\n            <span>User-Liste</span>\r\n        </button>\r\n        <button mat-menu-item disabled>\r\n            <mat-icon>settings</mat-icon>\r\n            <span>Einstellungen</span>\r\n        </button>\r\n        <button mat-menu-item disabled>\r\n            <mat-icon>power_settings_new</mat-icon>\r\n            <span>Abmelden</span>\r\n        </button>\r\n    </mat-menu>\r\n        {{title}}\r\n    </mat-toolbar>\r\n</div>\r\n\r\n<router-outlet></router-outlet> <!-- Platzhalter f�r entsprechende Inhalte -->\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div>\r\n    <mat-toolbar class=\"toolbar-box\" color=\"black\">\r\n        <button mat-button class=\"menuTrigger\" [matMenuTriggerFor]=\"menu\">\r\n            <mat-icon>more_vert</mat-icon>\r\n        </button>\r\n        <mat-menu #menu=\"matMenu\">\r\n            <button mat-menu-item routerLink=\"admin/kursmenu\" routerLinkActive=\"mat-button-active\">\r\n                <mat-icon>assignment_ind</mat-icon>\r\n                <span>Kurs-Liste</span>\r\n            </button>\r\n            <button mat-menu-item routerLink=\"admin/usermenu\" routerLinkActive=\"mat-button-active\">\r\n                <mat-icon>account_box</mat-icon>\r\n                <span>User-Liste</span>\r\n            </button>\r\n            <button mat-menu-item disabled>\r\n                <mat-icon>settings</mat-icon>\r\n                <span>Einstellungen</span>\r\n            </button>\r\n            <button mat-menu-item routerLink=\"login\" routerLinkActive=\"mat-button-active\">\r\n                <mat-icon>power_settings_new</mat-icon>\r\n                <span>Abmelden</span>\r\n            </button>\r\n        </mat-menu>\r\n        {{title}}\r\n    </mat-toolbar>\r\n</div>\r\n\r\n<router-outlet></router-outlet> <!-- Platzhalter f�r entsprechende Inhalte -->\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -423,7 +417,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["k" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatToolbarModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__["a" /* FlexLayoutModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatListModule */],
@@ -435,7 +429,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatDialogModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatIconModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatMenuModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatGridListModule */]
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["k" /* MatTabsModule */]
             ],
             exports: [],
             providers: [__WEBPACK_IMPORTED_MODULE_13__kurse_service__["a" /* KurseService */]],
@@ -647,7 +642,7 @@ var AddKursComponent = (function () {
     };
     AddKursComponent.prototype.save = function () {
         var _this = this;
-        this.kurseService.saveKurs(this.kurs).then(function () { return _this.router.navigate(['/']); });
+        this.kurseService.saveKurs(this.kurs).then(function () { return _this.router.navigate(['admin/kursmenu']); });
     };
     AddKursComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -673,7 +668,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    font-size: large;\r\n}\r\n\r\n/*.select-fix {\r\n    margin: 30px 0px 10px 0px;\r\n}*/\r\n", ""]);
+exports.push([module.i, ".kurs-form {\r\n    width: 500px;\r\n}\r\n\r\n.full-width {\r\n    width: 100%;\r\n    font-size: large;\r\n}\r\n\r\n.tab2-full-width {\r\n    width: 1000px;\r\n    \r\n}\r\n\r\n/*.select-fix {\r\n    margin: 30px 0px 10px 0px;\r\n} */\r\n\r\n./deep/ .mat-tab-label {\r\n    background-color: gray !important;\r\n}", ""]);
 
 // exports
 
@@ -686,7 +681,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kurse/kurs-detail/kurs-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n<form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n    <mat-form-field class=\"full-width\">\r\n        <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n        <mat-hint align=\"right\">{{kurs.name.length}} / 100</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field class=\"full-width\">\r\n        <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n        <mat-hint align=\"end\">/ 250</mat-hint>\r\n    </mat-form-field>\r\n    <mat-form-field>\r\n        <mat-select class=\"full-width select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n            <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n        </mat-select>\r\n    </mat-form-field>\r\n    <div>\r\n        <button mat-button (click)=\"save()\">speichern</button>\r\n        <button mat-button (click)=\"delete()\">delete</button>\r\n    </div>\r\n</form>"
+module.exports = "<mat-tab-group class=\"demo-tab-group\">\r\n    <mat-tab label=\"Kurs-Details\" color=\"'black'\">\r\n        <div>\r\n            <mat-spinner *ngIf=\"!kurs || !kategorien\"></mat-spinner>\r\n            <br />\r\n            <mat-divider></mat-divider>\r\n            <form *ngIf=\"kurs && kategorien\" class=\"kurs-form\">\r\n                <mat-form-field class=\"full-width\">\r\n                    <input matInput placeholder=\"name\" [(ngModel)]=\"kurs.name\" maxlength=\"100\" name=\"name\" />\r\n                    <mat-hint align=\"end\">{{kurs.name.length}} / 100</mat-hint>\r\n                </mat-form-field>\r\n                <br />\r\n                <mat-form-field class=\"full-width\">\r\n                    <textarea matInput placeholder=\"Beschreibung\" [(ngModel)]=\"kurs.beschreibung\" maxlength=\"250\" name=\"beschreibung\"></textarea>\r\n                    <mat-hint align=\"end\">/ 250</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field>\r\n                    <mat-select class=\"full-width select-fix\" placeholder=\"Kategorie\" [(ngModel)]=\"kurs.kategorieID\" name=\"kategorie\">\r\n                        <mat-option *ngFor=\"let kategorie of kategorien\" [value]=\"kategorie.kategorieID\">{{kategorie.name}}</mat-option>\r\n                    </mat-select>\r\n                </mat-form-field>\r\n                <br /> <br />\r\n                <div>\r\n                    <button mat-button (click)=\"save()\">speichern</button>\r\n                    <button mat-button (click)=\"delete()\">delete</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </mat-tab>\r\n    <mat-tab label=\"Kurs-Fragen\">\r\n        <div class=\"tab2-full-width\">\r\n                <mat-grid-list cols=\"9\" rowHeight=\"170px\" gutterSize=\"1px\" class=\"userlist\" *ngFor=\"let abfrage of abfragen\">\r\n                    <mat-grid-tile colspan=\"1\" rowspan=\"1\">Frage: </mat-grid-tile>\r\n                    <mat-grid-tile colspan=\"3\" rowspan=\"1\">{{abfrage.frage}}</mat-grid-tile>\r\n                    <mat-grid-tile colespan=\"1\" rowspan=\"1\"></mat-grid-tile>\r\n                    <mat-grid-tile colspan=\"1\" rowspan=\"1\">Antwort: </mat-grid-tile>\r\n                    <mat-grid-tile colspan=\"3\" rowspan=\"1\">{{abfrage.antwort}}</mat-grid-tile>\r\n                    <br />\r\n                    <mat-divider></mat-divider>\r\n                </mat-grid-list>\r\n        </div>\r\n    </mat-tab>\r\n</mat-tab-group>\r\n "
 
 /***/ }),
 
@@ -722,6 +717,7 @@ var KursDetailComponent = (function () {
         this.kurseService = kurseService;
         this.router = router;
         this.dialog = dialog;
+        this.abfragen = new Array();
     }
     KursDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -730,6 +726,9 @@ var KursDetailComponent = (function () {
         this.route.paramMap
             .switchMap(function (params) { return _this.kurseService.getKurs(+params.get('kursID')); })
             .subscribe(function (kurs) { return _this.kurs = kurs; }); //den Kurs den ich zur�ckbekommen habe auf den aktuellen Kurs setzen
+        this.route.paramMap
+            .switchMap(function (params) { return _this.kurseService.getAbfragen(+params.get('kursID')); })
+            .subscribe(function (abfragen) { return _this.abfragen = abfragen; });
     };
     KursDetailComponent.prototype.save = function () {
         var _this = this;
@@ -847,7 +846,7 @@ var LearningComponent = (function () {
             .subscribe(function (kurs) { return _this.kurs = kurs; });
         this.route.paramMap
             .switchMap(function (params) { return _this.kurseService.getAbfragen(+params.get('kursID')); })
-            .subscribe(function (abfragen) { return _this.abfragen = abfragen; }); //den Kurs den ich zurückbekommen habe auf den aktuellen Kurs setzen
+            .subscribe(function (abfragen) { return _this.abfragen = abfragen; });
         //this.kurseService.getKurs(+1).then(kurs => this.kurs = kurs);
         //  this.abfragen = this.kurs.abfragen;
         // console.log(this.kurs.abfragen.length);
@@ -893,7 +892,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".example-form {\r\n    min-width: 150px;\r\n    max-width: 400px;\r\n    width: 100%;\r\n    color: black !important;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.loginArea {\r\n    position: fixed;\r\n    bottom: 400px;\r\n    right: 875px;\r\n    border: 20px solid darkgray;\r\n    background-color: darkgray;\r\n}", ""]);
+exports.push([module.i, ".example-form {\r\n    min-width: 150px;\r\n    max-width: 400px;\r\n    width: 100%;\r\n    color: black !important;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.loginArea {\r\n    bottom: 200px;\r\n    right: 675px;\r\n    border: 20px solid darkgray;\r\n    background-color: darkgray;\r\n    max-width: 300px;\r\n    margin-left: 650px;\r\n    margin-top: 150px;\r\n}", ""]);
 
 // exports
 
@@ -906,7 +905,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"loginArea\">\r\n    <h2>Login</h2>\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n                <input matInput placeholder=\"Email\" [(ngModel)]=\"user.email\" maxlength=\"30\" name=\"user.email\" />\r\n                <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n                    Please enter a valid email address\r\n                </mat-error>\r\n                <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n                    Email is <strong>required</strong>\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br /> <br />\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n               <input matInput placeholder=\"passwort\" [(ngModel)]=\"user.passwort\" maxlength=\"20\" name=\"user.passwort\" />\r\n                <mat-hint align=\"start\"><strong>Don't disclose personal info</strong> </mat-hint>\r\n                <mat-hint align=\"end\">{{user.passwort.length}} / 20</mat-hint>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br />\r\n    <div class=\"login-actions\">\r\n        <button mat-button (click)=\"login(user.passwort, user.email)\">Login</button>\r\n        <a mat-button routerLink=\"../registration\">Registrieren</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--\r\n    <div>\r\n    <h2>Login</h2>\r\n    <form name=\"form\" ng-submit=\"vm.login()\" role=\"form\">\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.username.$dirty && form.username.$error.required }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" name=\"username\" id=\"username\" class=\"form-control\" ng-model=\"vm.username\" required />\r\n            <span ng-show=\"form.username.$dirty && form.username.$error.required\" class=\"help-block\">Username is required</span>\r\n        </div>\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" ng-model=\"vm.password\" required />\r\n            <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"help-block\">Password is required</span>\r\n        </div>\r\n        <div class=\"form-actions\">\r\n            <button type=\"submit\" ng-disabled=\"form.$invalid || vm.dataLoading\" class=\"btn btn-primary\">Login</button>\r\n            <img ng-if=\"vm.dataLoading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a href=\"#!/register\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n    </form>\r\n</div>\r\n-->"
+module.exports = "<div class=\"loginArea\">\r\n    <h2>Login</h2>\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n                <input matInput placeholder=\"Email\" [(ngModel)]=\"user.email\" maxlength=\"30\" name=\"user.email\" />\r\n                <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n                    Please enter a valid email address\r\n                </mat-error>\r\n                <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n                    Email is <strong>required</strong>\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br /> <br />\r\n    <div>\r\n        <form class=\"example-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n               <input matInput placeholder=\"Passwort\" [(ngModel)]=\"user.passwort\" maxlength=\"20\" name=\"user.passwort\" />\r\n                <mat-hint align=\"start\"><strong>Don't disclose personal info</strong> </mat-hint>\r\n                <mat-hint align=\"end\">{{user.passwort.length}} / 20</mat-hint>\r\n            </mat-form-field>\r\n        </form>\r\n    </div>\r\n    <br />\r\n    <div class=\"login-actions\">\r\n        <button mat-button (click)=\"login(user.passwort, user.email)\">Login</button>\r\n        <a mat-button routerLink=\"../registration\">Registrieren</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--\r\n    <div>\r\n    <h2>Login</h2>\r\n    <form name=\"form\" ng-submit=\"vm.login()\" role=\"form\">\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.username.$dirty && form.username.$error.required }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" name=\"username\" id=\"username\" class=\"form-control\" ng-model=\"vm.username\" required />\r\n            <span ng-show=\"form.username.$dirty && form.username.$error.required\" class=\"help-block\">Username is required</span>\r\n        </div>\r\n        <div class=\"form-group\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" ng-model=\"vm.password\" required />\r\n            <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"help-block\">Password is required</span>\r\n        </div>\r\n        <div class=\"form-actions\">\r\n            <button type=\"submit\" ng-disabled=\"form.$invalid || vm.dataLoading\" class=\"btn btn-primary\">Login</button>\r\n            <img ng-if=\"vm.dataLoading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a href=\"#!/register\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n    </form>\r\n</div>\r\n-->"
 
 /***/ }),
 

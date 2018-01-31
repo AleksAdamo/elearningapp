@@ -7,6 +7,15 @@
     font-size: large;
 }
 
+.tab2-full-width {
+    width: 1000px;
+    
+}
+
 /*.select-fix {
     margin: 30px 0px 10px 0px;
-}*/
+} */
+
+./deep/ .mat-tab-label {
+    background-color: gray !important;
+}

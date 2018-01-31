@@ -19,7 +19,7 @@ export class KursDetailComponent implements OnInit {
 
     private kurs: Kurs;
     private kategorien: Kategorie[];
-    private abfragen: Abfrage[];
+    private abfragen: Abfrage[] = new Array<Abfrage>();
 
     constructor(
         private route: ActivatedRoute,
@@ -33,6 +33,9 @@ export class KursDetailComponent implements OnInit {
         this.route.paramMap
             .switchMap((params: ParamMap) => this.kurseService.getKurs(+params.get('kursID')))
             .subscribe(kurs => this.kurs = kurs); //den Kurs den ich zurückbekommen habe auf den aktuellen Kurs setzen
+        this.route.paramMap
+            .switchMap((params: ParamMap) => this.kurseService.getAbfragen(+params.get('kursID')))
+            .subscribe(abfragen => this.abfragen = abfragen);
        
     }
 
